@@ -15,15 +15,8 @@ const CoinContextData = ({ children }) => {
         setCoin({ ...coin, coinList: coinDetail });
     };
 
-    const fetchGraph = async () => {
-        const response = await axios.get(`https://www.coingecko.com/coins/1/sparkline.svg`)
-        const coinGraph = response
-        setCoin({ ...coin, coinGraph: coinGraph })
-    }
-
     useEffect(() => {
         fetchData(); // Call the async function here
-        fetchGraph()
     }, []);
 
     return (
