@@ -1,9 +1,10 @@
 const CoinListBox = (props) => {
-    const { id, name, image, price, low24, high24, priceChangePer, marketCap } = props
+    const { id, name, image, price, low24, high24, priceChangePer, marketCap, rank } = props
     return (
         <div key={id}>
-            <img src={image} alt="" />
+            <p>{rank}.</p>
             <p >{name}</p>
+            <img src={image} alt="" />
             <div>
                 <p>${price}</p>
                 <p>${low24}</p>
