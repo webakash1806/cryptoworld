@@ -3,13 +3,14 @@ import CoinContext from "../../Context/CoinContext"
 
 const CoinList = () => {
     const { coin, setCoin } = useContext(CoinContext)
+    // console.log(coin)
+    const value = coin.coinList
+    console.log(value)
+
     return (
-        <div>
-            <h1>COin :{coin}</h1>
-            <button onClick={() => setCoin(coin + 1)}>inc</button>
-            <br />
-            <button onClick={() => setCoin(coin - 1)}>dec</button>
-        </div>
+        <>
+            {/* <h1>{coinss}</h1> */}
+        </>
     )
 }
 
