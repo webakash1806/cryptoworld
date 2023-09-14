@@ -10,12 +10,13 @@ const CoinList = () => {
 
     return (
         <>
-            <h1>COIN DATA</h1>
-            <div>
+            <h1 className="">COIN DATA</h1>
+            <div className="">
                 {value.map((val) => <CoinListBox
                     key={val.id}
                     rank={val.market_cap_rank}
                     name={val.name}
+                    symbol={val.symbol}
                     image={val.image}
                     price={val.current_price}
                     low24={val.low_24h}
