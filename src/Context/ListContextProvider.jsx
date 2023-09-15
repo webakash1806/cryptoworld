@@ -24,6 +24,8 @@ const ListContextProvider = ({ children }) => {
     }
 
 
+
+
     useEffect(() => {
         // fetchCoin(); // Call the async function here
         if (list.excActive === true) {

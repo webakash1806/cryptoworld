@@ -19,7 +19,7 @@ const ExchangeList = () => {
                         <p >name</p>
                     </div>
                     <div className="flex gap-3">
-                        <p className="min-w-[10rem] border text-right">Trust Score</p>
+                        <p className="min-w-[10rem] text-right">Trust Score</p>
                         <p className="min-w-[8rem] text-right">Launch Year</p>
                         <p className="min-w-[10rem] text-right ">24hr Volume</p>
                         {/* <p className="min-w-[7rem] text-right ">high24</p>

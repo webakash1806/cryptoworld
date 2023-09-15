@@ -10,7 +10,7 @@ const ExchangeListBox = ({ id, image, name, rank, year, vol24hr, trustScore }) =
                 </div>
 
                 <div className="flex gap-3">
-                    <div className="flex items-center justify-end gap-2 border w-[10rem]">
+                    <div className="flex items-center justify-end gap-2 w-[10rem]">
                         <p>{trustScore}</p>
                         <progress className="h-2 w-[7rem] [&::-webkit-progress-bar]:rounded-lg  [&::-webkit-progress-value]:rounded-lg   [&::-webkit-progress-bar]:bg-slate-300 [&::-webkit-progress-value]:bg-red-400 " value={trustScore} max="10"></progress>
                     </div>
