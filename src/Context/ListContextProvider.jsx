@@ -5,6 +5,8 @@ import axios from 'axios'
 const ListContextProvider = ({ children }) => {
 
     const [list, setList] = useState({
+        coinActive: false,
+        excActive: false,
         coinList: [],
         exchangeList: []
     })
@@ -21,10 +23,21 @@ const ListContextProvider = ({ children }) => {
         setList({ ...list, exchangeList: exchangeDetail })
     }
 
+
     useEffect(() => {
         // fetchCoin(); // Call the async function here
-        fetchExchange()
-    }, []);
+        if (list.excActive === true) {
+            fetchExchange()
+
+        }
+        else {
+            // setList({ ...list, excActive: false })
+            fetchCoin()
+            // setList({ ...list, excActive: false })
+        }
+
+
+    }, [list.excActive, list.coinActive]);
 
     return (
         <ListContext.Provider value={{ list, setList }}>

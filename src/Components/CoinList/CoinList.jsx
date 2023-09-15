@@ -1,3 +1,4 @@
+import Header from "../Header/Header"
 import { useContext } from "react"
 import ListContext from "../../Context/ListContext"
 import CoinListBox from "./CoinListBox"
@@ -10,6 +11,7 @@ const CoinList = () => {
 
     return (
         <div className="w-fit">
+            <Header />
             <h1 className="">COIN DATA</h1>
             <div className="flex flex-col gap-2 ">
                 <div className="flex font-bold capitalize border-t-[1px] border-b-[1px] pt-3 pb-3">
