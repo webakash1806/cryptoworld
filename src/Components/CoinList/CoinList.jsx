@@ -6,7 +6,7 @@ const CoinList = () => {
     const { list, setList } = useContext(ListContext)
     // console.log(coin)
     const value = list.coinList
-    console.log(value)
+    // console.log(value)
 
     return (
         <div className="w-fit">

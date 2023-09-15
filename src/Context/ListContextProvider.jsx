@@ -16,13 +16,13 @@ const ListContextProvider = ({ children }) => {
     };
 
     const fetchExchange = async () => {
-        const response = await axios.get('https://api.coingecko.com/api/v3/exchanges?per_page=100&page=1')
-        const exchangeDetail = response.data
+        const exchangeResponse = await axios.get('https://api.coingecko.com/api/v3/exchanges?per_page=100&page=1')
+        const exchangeDetail = exchangeResponse.data
         setList({ ...list, exchangeList: exchangeDetail })
     }
 
     useEffect(() => {
-        fetchCoin(); // Call the async function here
+        // fetchCoin(); // Call the async function here
         fetchExchange()
     }, []);
 

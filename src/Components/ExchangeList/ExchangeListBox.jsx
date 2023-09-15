@@ -1,8 +1,8 @@
 
-const ExchangeListBox = () => {
+const ExchangeListBox = ({ id }) => {
     return (
         <div>
-            i m exchange box
+            <h1>{id}</h1>
         </div>
     )
 }
