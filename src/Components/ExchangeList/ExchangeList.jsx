@@ -19,6 +19,7 @@ const ExchangeList = () => {
                         <p >name</p>
                     </div>
                     <div className="flex gap-3">
+                        <p className="min-w-[10rem] border text-right">Trust Score</p>
                         <p className="min-w-[8rem] text-right">Launch Year</p>
                         <p className="min-w-[10rem] text-right ">24hr Volume</p>
                         {/* <p className="min-w-[7rem] text-right ">high24</p>
@@ -31,6 +32,7 @@ const ExchangeList = () => {
                     rank={val.trust_score_rank}
                     image={val.image}
                     name={val.name}
+                    trustScore={val.trust_score}
                     year={val.year_established}
                     vol24hr={val.trade_volume_24h_btc}
                 />)}
