@@ -1,11 +1,11 @@
 import { useContext } from "react"
-import CoinContext from "../../Context/CoinContext"
-import CoinListBox from "../CoinListBox"
+import ListContext from "../../Context/ListContext"
+import CoinListBox from "./CoinListBox"
 
 const CoinList = () => {
-    const { coin, setCoin } = useContext(CoinContext)
+    const { list, setList } = useContext(ListContext)
     // console.log(coin)
-    const value = coin.coinList
+    const value = list.coinList
     console.log(value)
 
     return (
