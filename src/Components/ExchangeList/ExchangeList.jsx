@@ -2,12 +2,13 @@ import Header from "../Header/Header"
 import { useContext } from "react"
 import ListContext from "../../Context/ListContext"
 import ExchangeListBox from './ExchangeListBox'
+import Pagination from "../Pagination/ExchangePagination"
 
 const ExchangeList = () => {
     const { excList, setExcList } = useContext(ListContext)
-    console.log(excList)
-    const value = excList
-    console.log(value)
+    const value = excList.exchangeList
+    const pageValue = [1, 2, 3, 4, 5, 6]
+
     return (
         <div>
             <Header />
@@ -36,6 +37,10 @@ const ExchangeList = () => {
                     year={val.year_established}
                     vol24hr={val.trade_volume_24h_btc}
                 />)}
+                <div className="page flex gap-5">
+                    {pageValue.map((val) => <Pagination key={val}
+                        pageNo={val} />)}
+                </div>
             </div>
         </div>
     )

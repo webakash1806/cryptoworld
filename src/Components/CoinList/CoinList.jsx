@@ -2,12 +2,14 @@ import Header from "../Header/Header"
 import { useContext } from "react"
 import ListContext from "../../Context/ListContext"
 import CoinListBox from "./CoinListBox"
+import CoinPagination from "../Pagination/CoinPagination"
 
 const CoinList = () => {
     const { list, setList } = useContext(ListContext)
     // console.log(coin)
     const value = list.coinList
     // console.log(value)
+    const pageValue = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
     return (
         <div className="w-fit">
@@ -38,6 +40,11 @@ const CoinList = () => {
                     high24={val.high_24h}
                     priceChangePer={val.market_cap_change_percentage_24h}
                     marketCap={val.market_cap} />)}
+
+                <div className="flex">
+                    {pageValue.map((val) => <CoinPagination key={val}
+                        pageNo={val} />)}
+                </div>
             </div>
         </div>
     )
