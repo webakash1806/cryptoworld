@@ -9,10 +9,10 @@ const CoinList = () => {
     // console.log(coin)
     const value = list.coinList
     // console.log(value)
-    const pageValue = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    const pageValue = ['<', 1, 2, 3, 4, '>']
 
     return (
-        <div className="w-fit">
+        <div className="w-fit flex pt-6 pb-6 flex-col items-center justify-center">
             <Header />
             <h1 className="">COIN DATA</h1>
             <div className="flex flex-col gap-2 ">
@@ -41,10 +41,11 @@ const CoinList = () => {
                     priceChangePer={val.market_cap_change_percentage_24h}
                     marketCap={val.market_cap} />)}
 
-                <div className="flex">
-                    {pageValue.map((val) => <CoinPagination key={val}
-                        pageNo={val} />)}
-                </div>
+
+            </div>
+            <div className="flex">
+                {pageValue.map((val) => <CoinPagination key={val}
+                    pageNo={val} />)}
             </div>
         </div>
     )

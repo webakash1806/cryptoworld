@@ -7,10 +7,10 @@ import Pagination from "../Pagination/ExchangePagination"
 const ExchangeList = () => {
     const { excList, setExcList } = useContext(ListContext)
     const value = excList.exchangeList
-    const pageValue = [1, 2, 3, 4, 5, 6]
+    const pageValue = ['<', 1, 2, 3, 4, 5, 6, '>']
 
     return (
-        <div>
+        <div className="flex flex-col items-center justify-center w-fit pt-6 pb-6">
             <Header />
             hye
             <div>
@@ -37,10 +37,11 @@ const ExchangeList = () => {
                     year={val.year_established}
                     vol24hr={val.trade_volume_24h_btc}
                 />)}
-                <div className="page flex gap-5">
-                    {pageValue.map((val) => <Pagination key={val}
-                        pageNo={val} />)}
-                </div>
+
+            </div>
+            <div className="page flex ">
+                {pageValue.map((val) => <Pagination key={val}
+                    pageNo={val} />)}
             </div>
         </div>
     )
