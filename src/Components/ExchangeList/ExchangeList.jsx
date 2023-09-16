@@ -4,9 +4,9 @@ import ListContext from "../../Context/ListContext"
 import ExchangeListBox from './ExchangeListBox'
 
 const ExchangeList = () => {
-    const { list, setList } = useContext(ListContext)
-    console.log(list)
-    const value = list.exchangeList
+    const { excList, setExcList } = useContext(ListContext)
+    console.log(excList)
+    const value = excList
     console.log(value)
     return (
         <div>

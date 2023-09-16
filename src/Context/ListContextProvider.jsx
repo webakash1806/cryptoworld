@@ -5,11 +5,12 @@ import axios from 'axios'
 const ListContextProvider = ({ children }) => {
 
     const [list, setList] = useState({
-        coinActive: false,
-        excActive: false,
+        coinActive: '',
+        excActive: '',
         coinList: [],
-        exchangeList: []
     })
+
+    const [excList, setExcList] = useState([])
 
     const fetchCoin = async () => {
         const response = await axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=INR&order=market_cap_desc&per_page=100&page=1');
@@ -20,29 +21,17 @@ const ListContextProvider = ({ children }) => {
     const fetchExchange = async () => {
         const exchangeResponse = await axios.get('https://api.coingecko.com/api/v3/exchanges?per_page=100&page=1')
         const exchangeDetail = exchangeResponse.data
-        setList({ ...list, exchangeList: exchangeDetail })
+        setExcList(exchangeDetail)
     }
 
 
-
-
     useEffect(() => {
-        // fetchCoin(); // Call the async function here
-        if (list.excActive === true) {
-            fetchExchange()
-
-        }
-        else {
-            // setList({ ...list, excActive: false })
-            fetchCoin()
-            // setList({ ...list, excActive: false })
-        }
-
-
-    }, [list.excActive, list.coinActive]);
+        fetchExchange()
+        fetchCoin()
+    }, []);
 
     return (
-        <ListContext.Provider value={{ list, setList }}>
+        <ListContext.Provider value={{ list, setList, excList, setExcList }}>
             {children}
         </ListContext.Provider>
     )

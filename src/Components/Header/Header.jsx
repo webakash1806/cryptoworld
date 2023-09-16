@@ -8,8 +8,8 @@ const Header = () => {
     console.log(value)
     return (
         <div>
-            <Link to="/CryptoWorld/exchange" onClick={() => setList({ ...list, excActive: true })}>Exchange</Link>
-            <Link to="/CryptoWorld/coin" onClick={() => setList({ ...list, coinActive: true })}>Coins</Link>
+            <Link to="/CryptoWorld/exchange" onClick={() => setList({ ...list, excActive: 'exc' })}>Exchange</Link>
+            <Link to="/CryptoWorld/coin" onClick={() => setList({ ...list, coinActive: 'coin' })}>Coins</Link>
         </div>
     )
 }
