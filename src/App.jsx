@@ -9,9 +9,7 @@ const App = () => {
   return (
     <ListContextData>
 
-
       <Routes>
-        Hello
 
         <Route path="/cryptoworld" element={<Header />} />
         <Route path="/cryptoworld/exchange" element={<ExchangeList />} />

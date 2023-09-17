@@ -9,9 +9,9 @@ const ExchangeList = () => {
     const { excList, setExcList } = useContext(ListContext)
 
     return (
-        <div className=" flex pt-6 pb-6 flex-col items-center justify-center">
+        <div className=" flex gap-3 pb-6 flex-col items-center justify-center">
             <Header />
-            <h1 className="">COIN DATA</h1>
+            <h1 className="">Exchange DATA</h1>
             <div className="flex flex-col p-[0.5px]">
                 <div className="flex pt-3 pb-3">
                     <div className="flex flex-col min-w-[10rem] md:min-w-[20rem] lg:min-w-[25rem]  ">

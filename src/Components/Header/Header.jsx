@@ -1,11 +1,14 @@
-import { Link } from "react-router-dom"
+import HeaderList from "./HeaderList"
 
 const Header = () => {
 
+    const headerList = [{ "url": "/cryptoworld/coin", "list": "Coin" },
+    { url: "/cryptoworld/exchange", "list": "Exchange" }]
+
+
     return (
-        <div>
-            <Link to="/cryptoworld/exchange">Exchange</Link>
-            <Link to="/cryptoworld/coin">Coins</Link>
+        <div className="w-[100vw] p-3 flex gap-5 items-center justify-center bg-slate-200 text-center">
+            {headerList.map((val) => <HeaderList key={val.list} url={val.url} list={val.list} />)}
         </div>
     )
 }
