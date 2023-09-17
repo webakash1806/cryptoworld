@@ -12,7 +12,7 @@ const CoinList = () => {
         <div className=" flex pt-6 pb-6 flex-col items-center justify-center">
             <Header />
             <h1 className="">COIN DATA</h1>
-            <div className="flex flex-col p-2">
+            <div className="flex flex-col p-1">
                 <div className="flex pt-3 pb-3">
                     <div className="flex flex-col min-w-[10rem] md:min-w-[20rem] lg:min-w-[25rem]  ">
                         <div className="flex font-bold text-[14px] sm:text-[17x] capitalize border-t-[1px] border-b-[1px] pt-4 pb-4">
