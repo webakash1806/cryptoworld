@@ -9,8 +9,6 @@ const ExchangeListBox = ({ id, image, name, rank, }) => {
                         <p className="font-semibold ">{name}</p>
                     </div>
                 </div>
-
-
             </div>
         </>
     )
