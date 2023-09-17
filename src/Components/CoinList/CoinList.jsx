@@ -12,7 +12,7 @@ const CoinList = () => {
         <div className=" flex pt-6 pb-6 flex-col items-center justify-center">
             <Header />
             <h1 className="">COIN DATA</h1>
-            <div className="flex flex-col p-1">
+            <div className="flex flex-col p-[0.5px]">
                 <div className="flex pt-3 pb-3">
                     <div className="flex flex-col min-w-[10rem] md:min-w-[20rem] lg:min-w-[25rem]  ">
                         <div className="flex font-bold text-[14px] sm:text-[17x] capitalize border-t-[1px] border-b-[1px] pt-4 pb-4">
@@ -21,7 +21,7 @@ const CoinList = () => {
                                 <p >name</p>
                             </div>
                         </div>
-                        <div className="text-[14px] md:text-[15px] lg:text-[16px]">
+                        <div className="text-[15px] md:text-[15px] lg:text-[16px]">
                             {list.coinList.map((val) => <CoinListBox
                                 key={val.id}
                                 rank={val.market_cap_rank}
@@ -39,7 +39,7 @@ const CoinList = () => {
                             <p className="min-w-[4rem] sm:min-w-[5rem] text-right ">%</p>
                             <p className="min-w-[10rem] text-right pr-4">marketCap</p>
                         </div>
-                        <div className="text-[13px] md:text-[15px] lg:text-[16px]">
+                        <div className="text-[14px] md:text-[15px] lg:text-[16px]">
                             {list.coinList.map((val) => <CoinListScroll
                                 key={val.id}
                                 price={val.current_price}
