@@ -6,8 +6,6 @@ import Pagination from "../Pagination/ExchangePagination"
 
 const ExchangeList = () => {
     const { excList, setExcList } = useContext(ListContext)
-    const value = excList.exchangeList
-    const pageValue = ['<', 1, 2, 3, 4, 5, 6, '>']
 
     return (
         <div className="flex flex-col items-center justify-center w-fit pt-6 pb-6">
@@ -28,7 +26,7 @@ const ExchangeList = () => {
                         <p className="min-w-[10rem] text-right">marketCap</p> */}
                     </div>
                 </div>
-                {value.map((val) => <ExchangeListBox key={val.id}
+                {excList.exchangeList.map((val) => <ExchangeListBox key={val.id}
                     id={val.id}
                     rank={val.trust_score_rank}
                     image={val.image}
@@ -40,7 +38,7 @@ const ExchangeList = () => {
 
             </div>
             <div className="page flex ">
-                {pageValue.map((val) => <Pagination key={val}
+                {excList.pageValue.map((val) => <Pagination key={val}
                     pageNo={val} />)}
             </div>
         </div>

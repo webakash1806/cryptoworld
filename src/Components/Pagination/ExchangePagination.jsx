@@ -10,15 +10,12 @@ const ExchangePagination = ({ pageNo }) => {
         console.log(pageNo)
         if (pageNo === '<' && curPage > 1) {
             setExcList({ ...excList, excPage: curPage - 1 })
-            console.log(excList.page)
         }
         else if (pageNo === '>' && curPage < 6) {
             setExcList({ ...excList, excPage: curPage + 1 })
-            console.log(excList.page)
         }
         else {
             setExcList({ ...excList, excPage: pageNo })
-            console.log(excList.page)
         }
     }
 

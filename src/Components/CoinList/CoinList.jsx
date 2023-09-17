@@ -6,10 +6,6 @@ import CoinPagination from "../Pagination/CoinPagination"
 
 const CoinList = () => {
     const { list, setList } = useContext(ListContext)
-    // console.log(coin)
-    const value = list.coinList
-    // console.log(value)
-    const pageValue = ['<', 1, 2, 3, 4, '>']
 
     return (
         <div className="w-fit flex pt-6 pb-6 flex-col items-center justify-center">
@@ -29,7 +25,7 @@ const CoinList = () => {
                         <p className="min-w-[10rem] text-right">marketCap</p>
                     </div>
                 </div>
-                {value.map((val) => <CoinListBox
+                {list.coinList.map((val) => <CoinListBox
                     key={val.id}
                     rank={val.market_cap_rank}
                     name={val.name}
@@ -44,7 +40,7 @@ const CoinList = () => {
 
             </div>
             <div className="flex">
-                {pageValue.map((val) => <CoinPagination key={val}
+                {list.pageValue.map((val) => <CoinPagination key={val}
                     pageNo={val} />)}
             </div>
         </div>
