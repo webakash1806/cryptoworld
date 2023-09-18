@@ -21,7 +21,7 @@ const ExchangeList = () => {
                                 <p >name</p>
                             </div>
                         </div>
-                        <div className="text-[15px] md:text-[15px] lg:text-[16px]">
+                        <div className="text-[15px] md:text-[15px] lg:text-[16px] ">
                             {excList.exchangeList.map((val) => <ExchangeListBox
                                 key={val.id}
                                 id={val.id}
