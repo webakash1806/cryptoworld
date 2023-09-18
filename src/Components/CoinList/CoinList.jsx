@@ -9,7 +9,7 @@ const CoinList = () => {
     const { list, setList } = useContext(ListContext)
 
     return (
-        <div className=" flex w-full gap-4 pb-6 flex-col items-center justify-center">
+        <div className="dark:bg-black flex w-full gap-4 pb-6 flex-col items-center justify-center">
             <Header />
             <h1 className="">COIN DATA</h1>
             <div className="flex flex-col p-[0.5px]">
