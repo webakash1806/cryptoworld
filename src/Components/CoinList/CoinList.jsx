@@ -17,7 +17,7 @@ const CoinList = () => {
                     <div className="flex flex-col min-w-[10rem] md:min-w-[20rem] lg:min-w-[25rem]  ">
                         <div className="flex lg:sticky top-0 bg-white dark:bg-darkBg font-bold text-[14px] sm:text-[17x] capitalize border-t-[1px] border-b-[1px] border-[#b5b5b580] dark:border-[#6f6f6fab] pt-4 pb-4">
                             <p className="min-w-[2rem] md:min-w-[5rem] text-center ">#</p>
-                            <div className="min-w-[10em] md:min-w-[15.5rem] lg:min-w-[17.7rem] text-left">
+                            <div className="min-w-[10rem] md:min-w-[15.5rem] lg:min-w-[17.7rem] text-left">
                                 <p >name</p>
                             </div>
                         </div>
@@ -37,7 +37,7 @@ const CoinList = () => {
                             <p className="min-w-[5.5rem] sm:min-w-[7rem] text-right ">low24</p>
                             <p className="min-w-[6rem] sm:min-w-[7rem] text-right ">high24</p>
                             <p className="min-w-[4rem] sm:min-w-[5rem] text-right ">%</p>
-                            <p className="min-w-[10rem] text-right pr-4">marketCap</p>
+                            <p className="min-w-[11rem] text-right pr-10">marketCap</p>
                         </div>
                         <div className="text-[14px] md:text-[15px] lg:text-[16px]">
                             {list.coinList.map((val) => <CoinListScroll
