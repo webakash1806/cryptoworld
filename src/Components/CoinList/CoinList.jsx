@@ -15,7 +15,7 @@ const CoinList = () => {
             <div className="flex flex-col p-[0.5px]">
                 <div className="flex pt-3 pb-3">
                     <div className="flex flex-col min-w-[10rem] md:min-w-[20rem] lg:min-w-[25rem]  ">
-                        <div className="flex font-bold text-[14px] sm:text-[17x] capitalize border-t-[1px] border-b-[1px] pt-4 pb-4">
+                        <div className="flex lg:sticky top-0 bg-slate-50 font-bold text-[14px] sm:text-[17x] capitalize border-t-[1px] border-b-[1px] pt-4 pb-4">
                             <p className="min-w-[2rem] md:min-w-[5rem] text-center ">#</p>
                             <div className="min-w-[10em] md:min-w-[15.5rem] lg:min-w-[17.7rem] text-left">
                                 <p >name</p>
@@ -31,8 +31,8 @@ const CoinList = () => {
                             />)}
                         </div>
                     </div>
-                    <div className="flex flex-col min-w-[7.5] max-w-[10rem] sm:max-w-[22rem] md:max-w-[26rem] lg:max-w-fit lg:overflow-hidden overflow-x-scroll">
-                        <div className="flex lg:gap-3 font-bold text-[14px] sm:text-[17x] capitalize border-t-[1px] border-b-[1px] pt-4 pb-4 w-fit">
+                    <div className="flex flex-col min-w-[7.5] max-w-[10rem] sm:max-w-[22rem] md:max-w-[26rem] lg:max-w-fit lg:overflow-visible overflow-x-scroll">
+                        <div className="flex lg:sticky top-0 bg-slate-50 lg:gap-3 font-bold text-[14px] sm:text-[17x] capitalize border-t-[1px] border-b-[1px] pt-4 pb-4 w-fit">
                             <p className="min-w-[5.5rem] md:min-w-[7rem] lg:min-w-[8rem] text-right ">price</p>
                             <p className="min-w-[5.5rem] sm:min-w-[7rem] text-right ">low24</p>
                             <p className="min-w-[6rem] sm:min-w-[7rem] text-right ">high24</p>
