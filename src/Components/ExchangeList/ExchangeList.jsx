@@ -1,8 +1,8 @@
-import Header from "../Header/Header"
+import ListHeader from '../Header/ListHeader/ListHeader'
+
 import { useContext } from "react"
 import ListContext from "../../Context/ListContext"
 import ExchangeListBox from './ExchangeListBox'
-import Pagination from "../Pagination/ExchangePagination"
 import ExchangeListScroll from "./ExchangeListScroll"
 import ExchangePagination from "../Pagination/ExchangePagination"
 
@@ -11,7 +11,7 @@ const ExchangeList = () => {
 
     return (
         <div className="dark:bg-darkBg dark:text-white flex gap-3 pb-6 flex-col items-center justify-center">
-            <Header />
+            <ListHeader />
             <h1 className="">Exchange DATA</h1>
             <div className="flex flex-col p-[0.5px]">
                 <div className="flex pt-3 pb-3">

@@ -1,20 +1,18 @@
-import HeaderList from "./HeaderList"
-import DarkModeToggle from "../../Hooks/DarkModeToggle"
+import ListHeaderList from "./ListHeaderList"
 
-const Header = () => {
+const ListHeader = () => {
 
     const headerList = [{ "url": "/cryptoworld/coin", "list": "Coin" },
     { url: "/cryptoworld/exchange", "list": "Exchange" }]
 
-
+    console.log(headerList)
     return (
         <>
             <div className="w-[100vw] dark:bg-darkBg dark:text-white p-3 flex gap-5 items-center justify-center bg-slate-200 text-center">
-                {headerList.map((val) => <HeaderList key={val.list} url={val.url} list={val.list} />)}
+                {headerList.map((val) => <ListHeaderList key={val.list} url={val.url} list={val.list} />)}
             </div>
-            <DarkModeToggle />
         </>
     )
 }
 
-export default Header
+export default ListHeader

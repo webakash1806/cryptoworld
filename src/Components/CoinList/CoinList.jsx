@@ -1,10 +1,11 @@
-import Header from "../Header/Header"
+import ListHeader from '../Header/ListHeader/ListHeader'
 import { useContext } from "react"
 import ListContext from "../../Context/ListContext"
 import CoinListBox from "./CoinListBox"
 import CoinPagination from "../Pagination/CoinPagination"
 import CoinListScroll from "./CoinListScroll"
 import TrendingCoin from "../Trending/TrendingCoin"
+import Header from '../Header/MainHeader/Header'
 
 const CoinList = () => {
     const { list, setList } = useContext(ListContext)
@@ -14,6 +15,7 @@ const CoinList = () => {
         <div className=" dark:bg-darkBg dark:text-white flex w-full gap-4 pb-6 flex-col items-center justify-center">
             <Header />
             <TrendingCoin />
+            <ListHeader />
             <h1 className="">COIN DATA</h1>
             <div className="flex pt-3 pb-3  p-[0.5px]">
                 <div className="flex flex-col min-w-[10rem] md:min-w-[20rem] lg:min-w-[25rem]  ">

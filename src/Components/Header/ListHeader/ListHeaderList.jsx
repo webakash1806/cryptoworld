@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const HeaderList = ({ url, list }) => {
+const ListHeaderList = ({ url, list }) => {
     return (
         <div className="">
             <Link to={url}>{list}</Link>
@@ -8,4 +8,4 @@ const HeaderList = ({ url, list }) => {
     )
 }
 
-export default HeaderList
+export default ListHeaderList
