@@ -2,7 +2,7 @@ import ListHeaderList from "./ListHeaderList"
 
 const ListHeader = () => {
 
-    const headerList = [{ "url": "/cryptoworld/coin", "list": "Coin" },
+    const headerList = [{ "url": "/cryptoworld", "list": "Coin" },
     { url: "/cryptoworld/exchange", "list": "Exchange" }]
 
     console.log(headerList)

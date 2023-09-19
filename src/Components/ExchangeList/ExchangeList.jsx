@@ -1,5 +1,5 @@
 import ListHeader from '../Header/ListHeader/ListHeader'
-
+import Header from '../Header/MainHeader/Header'
 import { useContext } from "react"
 import ListContext from "../../Context/ListContext"
 import ExchangeListBox from './ExchangeListBox'
@@ -10,7 +10,8 @@ const ExchangeList = () => {
     const { excList, setExcList } = useContext(ListContext)
 
     return (
-        <div className="dark:bg-darkBg dark:text-white flex gap-3 pb-6 flex-col items-center justify-center">
+        <div className="dark:bg-darkBg dark:text-white pt-[6rem] flex gap-3 pb-6 flex-col items-center justify-center">
+            <Header />
             <ListHeader />
             <h1 className="">Exchange DATA</h1>
             <div className="flex flex-col p-[0.5px]">
