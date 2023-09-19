@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ListContext from "./ListContext";
 import axios from 'axios'
+import { CoinDataAPI, ExchangeDataAPI } from "../Hooks/useApiEndpoints";
 
 const ListContextProvider = ({ children }) => {
 
@@ -17,14 +18,16 @@ const ListContextProvider = ({ children }) => {
     })
 
     const fetchCoin = async () => {
-        const coinEndpoint = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=INR&order=market_cap_desc&per_page=100&page=${list.page}`
+        const coinPageCount = list.page
+        const coinEndpoint = CoinDataAPI(coinPageCount)
         const response = await axios.get(coinEndpoint);
         const coinDetail = response.data
         setList({ ...list, coinList: coinDetail });
     };
 
     const fetchExchange = async () => {
-        const exchangeEndpoint = `https://api.coingecko.com/api/v3/exchanges?per_page=100&page=${excList.excPage}`
+        const exchangePageCount = excList.excPage
+        const exchangeEndpoint = ExchangeDataAPI(exchangePageCount)
         const exchangeResponse = await axios.get(exchangeEndpoint)
         const exchangeDetail = exchangeResponse.data
         setExcList({ ...excList, exchangeList: exchangeDetail })
