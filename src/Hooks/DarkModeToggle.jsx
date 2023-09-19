@@ -20,6 +20,7 @@ function DarkModeToggle() {
                 checked={darkSide}
                 onChange={toggleDarkMode}
                 size={25}
+                color="#fff"
             />
         </>
     );

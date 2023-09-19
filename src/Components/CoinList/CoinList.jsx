@@ -12,7 +12,7 @@ const CoinList = () => {
 
 
     return (
-        <div className=" dark:bg-darkBg dark:text-white flex w-full gap-4 pb-6 flex-col items-center justify-center">
+        <div className=" dark:bg-darkBg pt-[7rem] dark:text-white flex w-full gap-4 pb-6 flex-col items-center justify-center">
             <Header />
             <TrendingCoin />
             <ListHeader />
