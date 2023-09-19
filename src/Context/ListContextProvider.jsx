@@ -7,14 +7,12 @@ const ListContextProvider = ({ children }) => {
     const [list, setList] = useState({
         page: 1,
         coinList: [],
-        pageValue: ['<', 1, 2, 3, 4, '>']
 
     })
 
     const [excList, setExcList] = useState({
         excPage: 1,
         exchangeList: [],
-        pageValue: ['<', 1, 2, 3, 4, 5, 6, '>']
 
     })
 

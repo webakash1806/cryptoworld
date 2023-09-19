@@ -4,6 +4,7 @@ import ListContext from "../../Context/ListContext"
 import ExchangeListBox from './ExchangeListBox'
 import Pagination from "../Pagination/ExchangePagination"
 import ExchangeListScroll from "./ExchangeListScroll"
+import ExchangePagination from "../Pagination/ExchangePagination"
 
 const ExchangeList = () => {
     const { excList, setExcList } = useContext(ListContext)
@@ -50,10 +51,7 @@ const ExchangeList = () => {
                 </div>
             </div>
 
-            <div className="page flex ">
-                {excList.pageValue.map((val) => <Pagination key={val}
-                    pageNo={val} />)}
-            </div>
+            <ExchangePagination />
         </div >
 
     )

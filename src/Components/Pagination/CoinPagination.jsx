@@ -1,35 +1,23 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import ListContext from "../../Context/ListContext"
+import Pagination from '@mui/material/Pagination'
 
-const CoinPagination = ({ pageNo }) => {
+
+const CoinPagination = () => {
     const { list, setList } = useContext(ListContext)
 
-    const curPage = list.page
-    const changePage = () => {
-        console.log(pageNo)
-        if (pageNo === '<' && curPage > 1) {
-            setList({ ...list, page: curPage - 1 })
-        }
-        else if (pageNo === '>' && curPage < 4) {
-            setList({ ...list, page: curPage + 1 })
-        }
-        else {
-            setList({ ...list, page: pageNo })
-        }
+    const handleChange = (e, p) => {
+        setList({ ...list, page: p })
     }
 
     return (
         <>
-            <div className="">
-                <button className="page-box border 
-                w-[2.8rem] h-[2.1rem] 
-                flex items-center justify-center 
-                font-semibold text-[1.2rem] 
-                cursor-pointer"
-                    style={{ backgroundColor: (curPage === pageNo) ? '#F87171' : '#CBD5E1' }}
-                    onClick={changePage}>
-                    {pageNo}</button>
-            </div >
+            <Pagination className="bg-white" count={10}
+                variant="outlined"
+                shape="rounded"
+                onChange={handleChange}
+            // classes={}
+            />
         </>
     )
 }
