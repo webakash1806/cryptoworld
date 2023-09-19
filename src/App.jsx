@@ -3,7 +3,7 @@ import ListContextData from './Context/ListContextProvider'
 import CoinList from './Components/CoinList/CoinList'
 import ExchangeList from './Components/ExchangeList/ExchangeList'
 import { Routes, Route } from 'react-router-dom'
-import ListHeader from './Components/Header/ListHeader/ListHeader'
+import Header from './Components/Header/MainHeader/Header'
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
 
       <Routes>
 
-        <Route path="/cryptoworld" element={<ListHeader />} />
+        <Route path="/cryptoworld" element={<Header />} />
         <Route path="/cryptoworld/exchange" element={<ExchangeList />} />
         <Route path="/cryptoworld/coin" element={<CoinList />} />
 
