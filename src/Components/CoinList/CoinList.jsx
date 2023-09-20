@@ -6,15 +6,18 @@ import CoinPagination from "../Pagination/CoinPagination"
 import CoinListScroll from "./CoinListScroll"
 import TrendingCoin from "../Trending/TrendingCoin"
 import Header from '../Header/MainHeader/Header'
+import bannerImage from '../../assets/wallpaperflare.com_wallpaper.jpg'
+
 
 const CoinList = () => {
     const { list, setList } = useContext(ListContext)
 
 
     return (
-        <div className=" dark:bg-darkBg pt-[7rem] dark:text-white flex w-full gap-4 pb-6 flex-col items-center justify-center">
+        <div className=" dark:bg-darkBg dark:text-white flex w-full gap-4 pb-6 flex-col items-center justify-center">
             <Header />
-            <TrendingCoin />
+            <div className='w-screen h-[40vh] flex items-center justify-center bg-no-repeat bg-cover' style={{ backgroundImage: `url(${bannerImage})` }}>    <TrendingCoin /></div>
+
             <ListHeader />
             <h1 className="">COIN DATA</h1>
             <div className="flex pt-3 pb-3  p-[0.5px]">

@@ -23,8 +23,8 @@ const TrendingCoin = () => {
         const decimalPlace = { maximumFractionDigits: 2 }
 
         return <>
-            <Link className='flex flex-col items-center text-[15px] md:text-[16px] lg:text-[18px]'>
-                < img src={val.image} alt="" className='w-[3rem] sm:w-[4rem] md:w-[5.5rem] mb-2 lg:mb-4' />
+            <Link className='flex flex-col items-center text-[15px] md:text-[16px] lg:text-[17px] mt-[4rem]'>
+                < img src={val.image} alt="" className='w-[3rem] sm:w-[3.8rem] md:w-[4.6rem] mb-2 lg:mb-4' />
                 <p className='font-bold'>{val.name}</p>
                 <div className='flex items-center gap-2'>
                     <span className='text-[13.5px] md:[14px] lg:[15px] text-grey'>{val.symbol}</span>
