@@ -14,9 +14,10 @@ const CoinList = () => {
 
 
     return (
-        <div className=" dark:bg-darkBg dark:text-white flex w-full gap-4 pb-6 flex-col items-center justify-center">
+        <div className=" dark:bg-darkBg dark:text-white flex gap-4 pb-6 flex-col items-center justify-center">
             <Header />
-            <div className='w-screen h-[35vh] flex items-center justify-center bg-no-repeat bg-cover' style={{ backgroundImage: `url(${bannerImage})` }}>    <TrendingCoin /></div>
+            <div className='w-full bg-[#00000065] h-[15rem] sm:h-[16rem] md:h-[17.5rem] lg:h-[18.5rem] flex items-center justify-center bg-no-repeat bg-cover'
+                style={{ backgroundImage: `linear-gradient(#00000043, #00000065),url(${bannerImage})`, backgroundPosition: 'center' }}>    <TrendingCoin /></div>
 
             <ListHeader />
             <h1 className="">COIN DATA</h1>
@@ -38,13 +39,13 @@ const CoinList = () => {
                         />)}
                     </div>
                 </div>
-                <div className="flex flex-col min-w-[2rem] max-w-[9.5rem] sm:max-w-[22rem] md:max-w-[26rem] lg:max-w-fit lg:overflow-visible overflow-x-scroll">
+                <div className="flex flex-col min-w-[2rem] max-w-[9.5rem] sm:max-w-[22rem] md:max-w-[26rem] lg:max-w-full lg:overflow-visible overflow-x-scroll">
                     <div className="flex lg:sticky top-0 bg-white dark:bg-darkBg lg:gap-3 font-bold text-[14px] sm:text-[17x] capitalize border-t-[1px] border-b-[1px] border-[#b5b5b580] dark:border-[#6f6f6fab] pt-4 pb-4 w-fit">
                         <p className="min-w-[5.5rem] md:min-w-[7rem] lg:min-w-[8rem] text-right ">price</p>
                         <p className="min-w-[5.5rem] sm:min-w-[7rem] text-right ">low24</p>
                         <p className="min-w-[6rem] sm:min-w-[7rem] text-right ">high24</p>
                         <p className="min-w-[4rem] sm:min-w-[5rem] text-right ">%</p>
-                        <p className="min-w-[11rem] text-right pr-10">marketCap</p>
+                        <p className="min-w-[11rem] text-right pr-6">marketCap</p>
                     </div>
                     <div className="text-[14px] md:text-[15px] lg:text-[16px]">
                         {list.coinList.map((val) => <CoinListScroll

@@ -33,7 +33,7 @@ const ExchangeList = () => {
                             />)}
                         </div>
                     </div>
-                    <div className="flex flex-col min-w-[7.5] max-w-[10rem] sm:max-w-[22rem] md:max-w-[26rem] lg:max-w-fit lg:overflow-visible overflow-x-scroll">
+                    <div className="flex flex-col min-w-[7.5] max-w-[10rem] sm:max-w-[22rem] md:max-w-[26rem] lg:max-w-full lg:overflow-visible overflow-x-scroll">
                         <div className="flex lg:sticky top-0  bg-white dark:bg-darkBg font-bold text-[14px] sm:text-[17x] capitalize border-t-[1px] border-b-[1px] border-[#b5b5b580] dark:border-[#6f6f6fab] pt-4 pb-4 w-fit">
 
                             <p className="min-w-[4.5rem] md:min-w-[7rem] text-center ">Year</p>
