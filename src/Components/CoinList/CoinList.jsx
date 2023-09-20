@@ -6,7 +6,7 @@ import CoinPagination from "../Pagination/CoinPagination"
 import CoinListScroll from "./CoinListScroll"
 import TrendingCoin from "../Trending/TrendingCoin"
 import Header from '../Header/MainHeader/Header'
-import bannerImage from '../../assets/trendingbanner.png'
+import bannerImage from '../../assets/trendingBanner.jpg'
 
 
 const CoinList = () => {
@@ -14,10 +14,10 @@ const CoinList = () => {
 
 
     return (
-        <div className=" dark:bg-darkBg dark:text-white flex gap-4 pb-6 flex-col items-center justify-center">
+        <div className=" dark:bg-darkBg dark:text-white min-h-screen flex gap-4 pb-6 flex-col items-center justify-between">
             <Header />
-            <div className='w-full shadow-[0px_0px_40px_#1d037b80] bg-[#1d037b80] h-[15rem] sm:h-[16rem] md:h-[18rem] lg:h-[19.5rem] flex items-center justify-center bg-no-repeat bg-cover'
-                style={{ backgroundImage: `linear-gradient(to right,#04021498, #19085642),url(${bannerImage})`, backgroundPosition: 'center' }}>    <TrendingCoin /></div>
+            <div className=' w-full shadow-[0px_0px_40px_#1d037b80] bg-[#12073ac5] h-[18.6rem] sm:h-[20rem] md:h-[22rem] lg:h-[24rem] flex flex-col items-center justify-center bg-no-repeat bg-cover'
+                style={{ backgroundImage: `linear-gradient(#230e785a, #00000087),url(${bannerImage})`, backgroundPosition: 'center' }}> <p className='pt-[3.5rem] pb-[2rem] text-[2.3rem] md:text-[3rem] lg:text-[3.2rem] font-mono font-bold'>CrytoWorld</p>   <div ><TrendingCoin /></div> </div>
 
             <ListHeader />
             <h1 className="">COIN DATA</h1>

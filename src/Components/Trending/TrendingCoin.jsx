@@ -16,27 +16,31 @@ const TrendingCoin = () => {
         },
         768: {
             items: 3
+        },
+        1024: {
+            items: 4
         }
+
     }
 
     const item = trendingList.map((val) => {
         const decimalPlace = { maximumFractionDigits: 2 }
 
         return <>
-            <Link className='flex flex-col items-center text-[15px] md:text-[16px] lg:text-[17px] mt-[4rem]'>
+            <Link className='flex flex-col items-center text-white text-[15px] md:text-[16px] lg:text-[17px] '>
                 < img src={val.image} alt="" className='w-[3rem] sm:w-[3.8rem] md:w-[4.6rem] mb-2 lg:mb-4' />
                 <p className='font-bold'>{val.name}</p>
                 <div className='flex items-center gap-2'>
-                    <span className='text-[13.5px] md:[14px] lg:[15px] text-grey'>{val.symbol}</span>
-                    <span className={(val.price_change_percentage_24h < 0) ? `text-red ` : `dark:text-green text-[#259813]`}>{val.price_change_percentage_24h === null ? "---" : `${Intl.NumberFormat("en-IN", decimalPlace).format(val.price_change_percentage_24h)}`}%</span>
+                    <span className='text-[14.5px] md:[15px] lg:[16px] text-[#d0d0d0]'>{val.symbol}</span>
+                    <span className={(val.price_change_percentage_24h < 0) ? `text-red bg-black rounded-md p-[1px_3px]` : `text-green bg-black rounded-md p-[1px_3px]`}>{val.price_change_percentage_24h === null ? "---" : `${Intl.NumberFormat("en-IN", decimalPlace).format(val.price_change_percentage_24h)}`}%</span>
                 </div>
-                <p className=" dark:text-[#d1d1d1] font-semibold">&#8377;{Intl.NumberFormat("en-IN").format(val.current_price)}</p>
+                <p className="text-[17px] md:text-[18px] lg:text-[19px] text-[#eaeaea] font-semibold">&#8377;{Intl.NumberFormat("en-IN").format(val.current_price)}</p>
             </Link >
         </>
     })
 
     return (
-        <div className='w-[90vw]'>
+        <div className='w-[17.5rem] sm:w-[39rem] md:w-[43rem] lg:w-[61rem] '>
             <AliceCarousel
                 mouseTracking
                 autoPlayInterval={1200}
