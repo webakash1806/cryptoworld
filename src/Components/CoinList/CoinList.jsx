@@ -16,7 +16,7 @@ const CoinList = () => {
     return (
         <div className=" dark:bg-darkBg dark:text-white flex w-full gap-4 pb-6 flex-col items-center justify-center">
             <Header />
-            <div className='w-screen h-[40vh] flex items-center justify-center bg-no-repeat bg-cover' style={{ backgroundImage: `url(${bannerImage})` }}>    <TrendingCoin /></div>
+            <div className='w-screen h-[35vh] flex items-center justify-center bg-no-repeat bg-cover' style={{ backgroundImage: `url(${bannerImage})` }}>    <TrendingCoin /></div>
 
             <ListHeader />
             <h1 className="">COIN DATA</h1>
