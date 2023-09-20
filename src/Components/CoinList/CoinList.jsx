@@ -6,7 +6,7 @@ import CoinPagination from "../Pagination/CoinPagination"
 import CoinListScroll from "./CoinListScroll"
 import TrendingCoin from "../Trending/TrendingCoin"
 import Header from '../Header/MainHeader/Header'
-import bannerImage from '../../assets/wallpaperflare.com_wallpaper.jpg'
+import bannerImage from '../../assets/trendingbanner.png'
 
 
 const CoinList = () => {
@@ -16,8 +16,8 @@ const CoinList = () => {
     return (
         <div className=" dark:bg-darkBg dark:text-white flex gap-4 pb-6 flex-col items-center justify-center">
             <Header />
-            <div className='w-full bg-[#00000065] h-[15rem] sm:h-[16rem] md:h-[17.5rem] lg:h-[18.5rem] flex items-center justify-center bg-no-repeat bg-cover'
-                style={{ backgroundImage: `linear-gradient(#00000043, #00000065),url(${bannerImage})`, backgroundPosition: 'center' }}>    <TrendingCoin /></div>
+            <div className='w-full shadow-[0px_0px_40px_#1d037b80] bg-[#1d037b80] h-[15rem] sm:h-[16rem] md:h-[18rem] lg:h-[19.5rem] flex items-center justify-center bg-no-repeat bg-cover'
+                style={{ backgroundImage: `linear-gradient(to right,#04021498, #19085642),url(${bannerImage})`, backgroundPosition: 'center' }}>    <TrendingCoin /></div>
 
             <ListHeader />
             <h1 className="">COIN DATA</h1>
