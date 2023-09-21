@@ -1,12 +1,14 @@
 import React from 'react'
 import Header from '../Header/MainHeader/Header'
+import Footer from '../Footer/Footer'
 
 const ContactPage = () => {
     return (
-        <>
+        <div className='h-screen flex flex-col justify-between'>
             <Header />
-            <div className='pt-[4rem] w-screen h-screen bg-white dark:bg-darkBg text-black dark:text-white'>Contact Page --- Comming Soon....</div>
-        </>
+            <div className='pt-[4rem] w-screen bg-white dark:bg-darkBg text-black dark:text-white'>ContactPage --- Coming Soon....</div>
+            <Footer />
+        </div>
     )
 }
 
