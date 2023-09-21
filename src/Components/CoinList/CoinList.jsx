@@ -13,13 +13,12 @@ import Loading from '../Loading/Loading'
 const CoinList = () => {
     const { list, setList } = useContext(ListContext)
 
-
     return (
         <div className=" dark:bg-darkBg dark:text-white gap-4 pb-6  min-h-[100vh] flex flex-col items-center justify-between">
             <Header />
             <div className=' w-full shadow-[0px_0px_40px_#1d037b80] bg-[#12073ac5] h-[18.6rem] sm:h-[20rem] md:h-[22rem] lg:h-[24rem] flex flex-col items-center justify-center bg-no-repeat bg-cover'
                 style={{ backgroundImage: `linear-gradient(#230e785a, #00000087),url(${bannerImage})`, backgroundPosition: 'center' }}>
-                <p className='pt-[3.5rem] pb-[2rem] text-[2.3rem] md:text-[3rem] lg:text-[3.2rem] font-mono font-bold'>CrytoWorld</p>
+                <p className='pt-[3.5rem] pb-[2rem] text-[2.3rem] text-white md:text-[3rem] lg:text-[3.2rem] font-mono font-bold'>CrytoWorld</p>
                 <div ><TrendingCoin /></div>
             </div>
             <div className="flex flex-col items-center">
@@ -39,6 +38,7 @@ const CoinList = () => {
                         <div className="text-[15px] md:text-[15px] lg:text-[16px]">
                             {list.coinList.map((val) => <CoinListBox
                                 key={val.id}
+                                id={val.id}
                                 rank={val.market_cap_rank}
                                 name={val.name}
                                 symbol={val.symbol}

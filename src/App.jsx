@@ -7,6 +7,7 @@ import About from './Components/About/About'
 import FAQpage from './Components/FAQPage/FAQpage'
 import ContactPage from './Components/ContactPage/ContactPage'
 import ProjectPage from './Components/ProjectPage/ProjectPage'
+import CoinData from './Components/SIngleCoin/CoinData'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/cryptoworld/FAQ" element={<FAQpage />} />
         <Route path="/cryptoworld/contact" element={<ContactPage />} />
         <Route path="/cryptoworld/projects" element={<ProjectPage />} />
+        <Route path="/cryptoworld/coin/:id" element={<CoinData />} />
       </Routes>
 
     </ListContextData>
