@@ -3,9 +3,10 @@ import useTrendingData from '../../Hooks/useTrendingData'
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { Link } from 'react-router-dom'
+import Loading from '../Loading/Loading';
 
 const TrendingCoin = () => {
-    const [trendingList, setTrendingList] = useTrendingData()
+    const [trendingList, setTrendingList, isLoading] = useTrendingData()
     console.log(trendingList)
     const responsive = {
         0: {
@@ -40,18 +41,19 @@ const TrendingCoin = () => {
     })
 
     return (
-        <div className='w-[17.5rem] sm:w-[39rem] md:w-[43rem] lg:w-[61rem] '>
-            <AliceCarousel
-                mouseTracking
-                autoPlayInterval={1200}
-                animationDuration={1200}
-                infinite
-                responsive={responsive}
-                disableDotsControls
-                disableButtonsControls
-                items={item}
-                autoPlay
-            />
+        <div className='w-[17.5rem] sm:w-[39rem] md:w-[43rem] lg:w-[61rem] flex items-center justify-center'>
+            {isLoading ? <Loading /> :
+                <AliceCarousel
+                    mouseTracking
+                    autoPlayInterval={1200}
+                    animationDuration={1200}
+                    infinite
+                    responsive={responsive}
+                    disableDotsControls
+                    disableButtonsControls
+                    items={item}
+                    autoPlay
+                />}
         </div>
     )
 }

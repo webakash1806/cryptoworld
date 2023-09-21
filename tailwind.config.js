@@ -17,7 +17,14 @@ export default {
       'red': '#FF281D'
 
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        load: {
+          '0%, 100%': { transform: 'rotate(-2deg)' },
+          '50%': { transform: 'rotate(2deg)', color: '#fff' },
+        }
+      }
+    },
   },
   plugins: [],
 }
