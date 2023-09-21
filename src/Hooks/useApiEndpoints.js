@@ -18,8 +18,8 @@ export const singleCoinData = (id) => {
     return `https://api.coingecko.com/api/v3/coins/${id}?sparkline=false`
 }
 
-export const coinSparkLine = (id, day = 1) => {
-    return `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=INR&days=${day}`
+export const coinSparkLine = (id, days = 1) => {
+    return `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=INR&days=${days}`
 }
 
 export const singleExchange = (id) => {

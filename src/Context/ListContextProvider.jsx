@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ListContext from "./ListContext";
 import axios from 'axios'
-import { CoinDataAPI, ExchangeDataAPI } from "../Hooks/useApiEndpoints";
+import { CoinDataAPI, ExchangeDataAPI, } from "../Hooks/useApiEndpoints";
 
 const ListContextProvider = ({ children }) => {
 
@@ -16,6 +16,8 @@ const ListContextProvider = ({ children }) => {
         exchangeList: [],
         isLoading: false
     })
+
+
 
     const fetchCoin = async () => {
         setList({ ...list, isLoading: true })
@@ -34,7 +36,6 @@ const ListContextProvider = ({ children }) => {
         const exchangeDetail = exchangeResponse.data
         setExcList({ ...excList, exchangeList: exchangeDetail, isLoading: false })
     }
-
 
     useEffect(() => {
         fetchExchange()
