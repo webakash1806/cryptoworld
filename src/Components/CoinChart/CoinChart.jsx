@@ -9,6 +9,7 @@ import {
     PointElement,
     Legend,
     Tooltip,
+    Filler
 } from 'chart.js'
 
 ChartJS.register(
@@ -17,7 +18,8 @@ ChartJS.register(
     LinearScale,
     PointElement,
     Legend,
-    Tooltip
+    Tooltip,
+    Filler
 )
 
 const CoinChart = ({ id }) => {
@@ -42,26 +44,67 @@ const CoinChart = ({ id }) => {
         datasets: [{
             label: `${id} chart`,
             data: coinChart.coinChartData.map((coin) => coin[1]),
+
             borderColor: 'red',
             borderWidth: 1,
             pointBorderColor: 'black',
-            tensiom: 0.02,
+            tensiom: 0.01,
+            backgroundColor: 'transparent',
+            fill: true,
+            // yAxisID: 'y'
         }]
     }
     return (
-        <div className='min-w-[19rem] max-w-[50rem]'>
+        <div className=' border w-[100vw]  sm:w-[35rem] lg:w-[40rem] h-[23rem] md:h-[25rem]'>
             coinChart{id}
-            <Line data={data}
+            <Line className=''
+                data={data}
                 options={{
+
                     responsive: true,
+                    maintainAspectRatio: true,
+                    aspectRatio: 3 / 2,
                     plugins: {
                         legend: true,
+
+                    },
+                    scales: {
+                        y: {
+                            grace: '10%',
+                            ticks: {
+                                mirror: 'true',
+                                color: 'red',
+                                showLabelBackdrop: 'true',
+                                z: 1,
+                                stepSize: 100,
+                                minTicksLimit: 5,
+                                maxTicksLimit: 8
+
+                            },
+                            grid: {
+                                drawTicks: false
+                            },
+
+                            border: {
+                                color: 'black'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                // padding: 10,
+                                minTicksLimit: 2,
+                                maxTicksLimit: 7
+                            },
+
+
+                        },
                     },
                     elements: {
                         point: {
                             radius: 0.5,
                         },
                     },
+
                 }} />
         </div>
     )
