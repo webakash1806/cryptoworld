@@ -4,7 +4,7 @@ import axios from "axios"
 
 const useCoinChart = () => {
     const [coinChart, setCoinChart] = useState({
-        days: 1,
+        days: '1',
         coinChartData: [],
         isLoading: false,
         coinID: ''

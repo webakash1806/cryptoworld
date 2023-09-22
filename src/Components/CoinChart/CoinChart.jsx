@@ -1,7 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import useCoinChart from '../../Hooks/useCoinChart'
 import useChartDays from '../../Hooks/useChartDays'
 import Loading from '../Loading/Loading'
+import { Chart, Interaction } from 'chart.js';
+import { CrosshairPlugin, Interpolate } from 'chartjs-plugin-crosshair';
+Chart.register(CrosshairPlugin);
+Interaction.modes.interpolate = Interpolate
 import { Line } from 'react-chartjs-2'
 import {
     Chart as ChartJS,
@@ -24,20 +28,37 @@ ChartJS.register(
     Filler
 )
 
-const CoinChart = ({ id }) => {
-
+const CoinChart = (props) => {
+    const { id, per24, per1yr, per7, per14, per30 } = props
     const [coinChart, setCoinChart] = useCoinChart()
+    const [err, setErr] = useState(per24)
 
     useEffect(() => {
         setCoinChart({ ...coinChart, coinID: id })
-    }, [coinChart.days])
+        if (coinChart.days === '7') {
+            setErr(per7)
+        }
+        else if (coinChart.days === '14') {
+            setErr(per14)
+        }
+        else if (coinChart.days === '30') {
+            setErr(per30)
+        }
+        else if (coinChart.days === '365') {
+            setErr(per1yr)
+        }
+        else if (coinChart.days === '1') {
+            setErr(per24)
+        }
+
+    }, [coinChart.days, props])
 
 
     const labels = coinChart.coinChartData.map((coin) => {
         let date = new Date(coin[0])
         let time = date.getHours() > 12 ? `${date.getHours() - 12}:${date.getMinutes()}PM` :
             `${date.getHours()}:${date.getMinutes()}AM`
-        return (coinChart.days === 1) ? time : date.toLocaleDateString()
+        return coinChart.days === '1' ? time : date.toLocaleDateString()
     })
 
     const data = {
@@ -45,14 +66,12 @@ const CoinChart = ({ id }) => {
         datasets: [{
             label: `${id} chart`,
             data: coinChart.coinChartData.map((coin) => coin[1]),
-            borderColor: 'red',
+            borderColor: err < 0 ? 'red' : 'green',
             borderWidth: 1,
-            pointBorderColor: 'red',
-            tensiom: 5,
+            tension: 0.1,
             backgroundColor: '#0f8d0447',
             fill: true,
             color: 'white'
-            // yAxisID: 'y'
         }]
     }
 
@@ -70,23 +89,35 @@ const CoinChart = ({ id }) => {
                     <Line className=''
                         data={data}
                         options={{
-
                             responsive: true,
                             maintainAspectRatio: true,
                             aspectRatio: 3 / 2,
                             plugins: {
                                 legend: true,
+                                tooltip: {
+                                    mode: 'interpolate',
+                                    intersect: false
+                                },
+                                crosshair: {
+                                    line: {
+                                        color: '#808080',
+                                        width: 0.5
+                                    },
+                                }
                             },
                             scales: {
                                 y: {
+                                    offset: true,
+
                                     grace: '10%',
                                     ticks: {
                                         mirror: 'true',
                                         color: 'grey',
                                         z: 1,
-                                        stepSize: 100,
+                                        stepSize: 0.01,
                                         minTicksLimit: 5,
                                         maxTicksLimit: 8,
+
                                     },
 
                                     border: {
@@ -94,7 +125,10 @@ const CoinChart = ({ id }) => {
                                     }
                                 },
                                 x: {
+                                    offset: true,
+
                                     ticks: {
+                                        display: true,
                                         minTicksLimit: 2,
                                         maxTicksLimit: 6,
                                     },
