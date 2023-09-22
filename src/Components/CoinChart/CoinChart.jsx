@@ -30,14 +30,13 @@ const CoinChart = ({ id }) => {
         setCoinChart({ ...coinChart, coinID: id })
     }, [])
 
-    console.log(coinChart)
-
     const labels = coinChart.coinChartData.map((coin) => {
         let date = new Date(coin[0])
         let time = date.getHours() > 12 ? `${date.getHours() - 12}:${date.getMinutes()}PM` :
             `${date.getHours()}:${date.getMinutes()}AM`
         return (coinChart.days === 1) ? time : date.toLocaleDateString()
     })
+
 
     const data = {
         labels: labels,
@@ -46,10 +45,11 @@ const CoinChart = ({ id }) => {
             data: coinChart.coinChartData.map((coin) => coin[1]),
 
             borderColor: 'red',
-            borderWidth: 1,
+            borderWidth: 2,
+
             pointBorderColor: 'black',
-            tensiom: 0.01,
-            backgroundColor: 'transparent',
+            tensiom: 0.2,
+            backgroundColor: '#0f8d0447',
             fill: true,
             // yAxisID: 'y'
         }]
@@ -66,23 +66,18 @@ const CoinChart = ({ id }) => {
                     aspectRatio: 3 / 2,
                     plugins: {
                         legend: true,
-
                     },
                     scales: {
                         y: {
                             grace: '10%',
                             ticks: {
                                 mirror: 'true',
-                                color: 'red',
+                                color: 'grey',
                                 showLabelBackdrop: 'true',
                                 z: 1,
                                 stepSize: 100,
                                 minTicksLimit: 5,
-                                maxTicksLimit: 8
-
-                            },
-                            grid: {
-                                drawTicks: false
+                                maxTicksLimit: 8,
                             },
 
                             border: {
@@ -91,12 +86,11 @@ const CoinChart = ({ id }) => {
                         },
                         x: {
                             ticks: {
-                                // padding: 10,
-                                minTicksLimit: 2,
-                                maxTicksLimit: 7
+                                maxTicksLimit: 5,
                             },
-
-
+                            grid: {
+                                display: false
+                            }
                         },
                     },
                     elements: {
