@@ -25,6 +25,7 @@ ChartJS.register(
 const CoinChart = ({ id }) => {
 
     const [coinChart, setCoinChart] = useCoinChart()
+    // const
 
     useEffect(() => {
         setCoinChart({ ...coinChart, coinID: id })
@@ -37,26 +38,24 @@ const CoinChart = ({ id }) => {
         return (coinChart.days === 1) ? time : date.toLocaleDateString()
     })
 
-
     const data = {
         labels: labels,
         datasets: [{
             label: `${id} chart`,
             data: coinChart.coinChartData.map((coin) => coin[1]),
-
             borderColor: 'red',
-            borderWidth: 2,
-
-            pointBorderColor: 'black',
-            tensiom: 0.2,
+            borderWidth: 1,
+            pointBorderColor: 'red',
+            tensiom: 5,
             backgroundColor: '#0f8d0447',
             fill: true,
+            color: 'white'
             // yAxisID: 'y'
         }]
     }
     return (
-        <div className=' border w-[100vw]  sm:w-[35rem] lg:w-[40rem] h-[23rem] md:h-[25rem]'>
-            coinChart{id}
+        <div className='dark:bg-darkBg dark:text-white border w-[100vw]  sm:w-[35rem] md:[37rem] lg:w-[36rem] h-fit'>
+            {id}
             <Line className=''
                 data={data}
                 options={{
@@ -73,7 +72,7 @@ const CoinChart = ({ id }) => {
                             ticks: {
                                 mirror: 'true',
                                 color: 'grey',
-                                showLabelBackdrop: 'true',
+                                // showLabelBackdrop: 'true',
                                 z: 1,
                                 stepSize: 100,
                                 minTicksLimit: 5,
@@ -86,7 +85,8 @@ const CoinChart = ({ id }) => {
                         },
                         x: {
                             ticks: {
-                                maxTicksLimit: 5,
+                                minTicksLimit: 2,
+                                maxTicksLimit: 6,
                             },
                             grid: {
                                 display: false
