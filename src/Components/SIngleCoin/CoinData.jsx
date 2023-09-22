@@ -8,15 +8,10 @@ import CoinDataCard from './SingleCoinCards/CoinDataCard'
 
 const CoinData = () => {
     const [singleCoin, setSingleCoin] = useSingleCoin()
-
     console.log(singleCoin)
-
     const { image, rank, desc, name, price, symbol, marketCap, vol, high24, low24, per24, per1yr, per7, per30, per14 } = singleCoin.singleData
 
     const { id } = useParams()
-
-
-
     // console.log(singleCoin.singleData.desc)
 
     useEffect(() => {
