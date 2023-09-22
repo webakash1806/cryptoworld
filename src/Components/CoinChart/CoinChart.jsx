@@ -51,8 +51,7 @@ const CoinChart = (props) => {
             setErr(per24)
         }
 
-    }, [coinChart.days, props])
-
+    }, [coinChart.days, per24, per1yr, per7, per14, per30, setErr])
 
     const labels = coinChart.coinChartData.map((coin) => {
         let date = new Date(coin[0])
@@ -66,13 +65,65 @@ const CoinChart = (props) => {
         datasets: [{
             label: `${id} chart`,
             data: coinChart.coinChartData.map((coin) => coin[1]),
-            borderColor: err < 0 ? 'red' : 'green',
-            borderWidth: 1,
+            borderColor: err < 0 ? '#DC2626' : '#10B981',
+            borderWidth: 2,
             tension: 0.1,
-            backgroundColor: '#0f8d0447',
+            backgroundColor: err < 0 ? '#492121' : '#193114',
             fill: true,
             color: 'white'
         }]
+    }
+
+    const options = {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: 3 / 2,
+        plugins: {
+            legend: true,
+            tooltip: {
+                mode: 'interpolate',
+                intersect: false
+            },
+            crosshair: {
+                line: {
+                    color: '#808080',
+                    width: 0.5
+                },
+            }
+        },
+        scales: {
+            y: {
+                offset: true,
+                grace: '10%',
+                ticks: {
+                    mirror: 'true',
+                    color: 'grey',
+                    z: 1,
+                    stepSize: 0.01,
+                    minTicksLimit: 5,
+                    maxTicksLimit: 8,
+                },
+                border: {
+                    color: 'black'
+                }
+            },
+            x: {
+                offset: true,
+                ticks: {
+                    display: true,
+                    minTicksLimit: 2,
+                    maxTicksLimit: 6,
+                },
+                grid: {
+                    display: false
+                }
+            },
+        },
+        elements: {
+            point: {
+                radius: 0.5,
+            },
+        },
     }
 
     return (
@@ -80,70 +131,15 @@ const CoinChart = (props) => {
             {id}
 
             <div className='flex '>  {useChartDays.map((val) =>
-                <div key={val.duration} className='border p-[0.5px] text-center w-[4.5rem]' onClick={() => setCoinChart({ ...coinChart, days: val.duration })}> {val.time}</ div>
+                <div key={val.duration} className='border p-[0.5px] text-center w-[4.5rem] cursor-pointer' onClick={() => setCoinChart({ ...coinChart, days: val.duration })}> {val.time}</ div>
             )
             }</div >
 
-            <div className='flex items-center justify-center w-[100vw]  sm:w-[35rem] md:[37rem] lg:w-[36rem] min-h-[10rem] h-fit'>
+            <div className='flex pr-1 md:pr-3 items-center justify-center w-[100vw]  sm:w-[35rem] md:[37rem] lg:w-[36rem] min-h-[15rem] h-fit'>
                 {coinChart.isLoading === true ? <Loading /> :
                     <Line className=''
                         data={data}
-                        options={{
-                            responsive: true,
-                            maintainAspectRatio: true,
-                            aspectRatio: 3 / 2,
-                            plugins: {
-                                legend: true,
-                                tooltip: {
-                                    mode: 'interpolate',
-                                    intersect: false
-                                },
-                                crosshair: {
-                                    line: {
-                                        color: '#808080',
-                                        width: 0.5
-                                    },
-                                }
-                            },
-                            scales: {
-                                y: {
-                                    offset: true,
-
-                                    grace: '10%',
-                                    ticks: {
-                                        mirror: 'true',
-                                        color: 'grey',
-                                        z: 1,
-                                        stepSize: 0.01,
-                                        minTicksLimit: 5,
-                                        maxTicksLimit: 8,
-
-                                    },
-
-                                    border: {
-                                        color: 'black'
-                                    }
-                                },
-                                x: {
-                                    offset: true,
-
-                                    ticks: {
-                                        display: true,
-                                        minTicksLimit: 2,
-                                        maxTicksLimit: 6,
-                                    },
-                                    grid: {
-                                        display: false
-                                    }
-                                },
-                            },
-                            elements: {
-                                point: {
-                                    radius: 0.5,
-                                },
-                            },
-
-                        }} />
+                        options={options} />
                 }
             </div>
         </div >
