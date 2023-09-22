@@ -21,8 +21,9 @@ const useSingleCoin = () => {
         else {
             const response = await axios.get(singleCoinEndpoint)
             const singleCoinDetail = {
-                // data: response.data,
+                data: response.data,
                 image: response.data.image.large,
+                name: response.data.name,
                 rank: response.data.market_cap_rank,
                 desc: response.data.description.en,
                 price: response.data.market_data.current_price.inr,
