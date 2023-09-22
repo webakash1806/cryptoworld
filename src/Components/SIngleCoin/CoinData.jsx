@@ -32,7 +32,7 @@ const CoinData = () => {
                 <CoinDataCard id={id} rank={rank} name={name} symbol={symbol} img={image} price={price} high24={high24} low24={low24} per24={per24} marketCap={marketCap} vol={vol} />
                 <CoinConverterCard symbol={symbol} price={price} />
                 <div>
-                    {/* <CoinChart id={id} /> */}
+                    <CoinChart id={id} />
                 </div>
             </div>
 

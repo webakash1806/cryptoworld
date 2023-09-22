@@ -17,14 +17,6 @@ const CoinConverterCard = ({ symbol, price }) => {
         }
     }
 
-    const decimalPlace = { maximumFractionDigits: 2 }
-
-
-    // const convertedPrice = input * price
-    // const convertedPriceIntoCoin = price / input
-
-    // console.log(convertedPrice)
-
     useEffect(() => {
 
     }, [setCoinInput, setINRInput, setSelected])

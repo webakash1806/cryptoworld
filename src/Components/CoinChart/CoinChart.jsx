@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import useCoinChart from '../../Hooks/useCoinChart'
+import useChartDays from '../../Hooks/useChartDays'
 import { Line } from 'react-chartjs-2'
 import {
     Chart as ChartJS,
@@ -11,6 +12,7 @@ import {
     Tooltip,
     Filler
 } from 'chart.js'
+import days from '../../Hooks/useChartDays'
 
 ChartJS.register(
     LineElement,
@@ -25,7 +27,6 @@ ChartJS.register(
 const CoinChart = ({ id }) => {
 
     const [coinChart, setCoinChart] = useCoinChart()
-    // const
 
     useEffect(() => {
         setCoinChart({ ...coinChart, coinID: id })
@@ -53,9 +54,19 @@ const CoinChart = ({ id }) => {
             // yAxisID: 'y'
         }]
     }
+
+
+
+
     return (
         <div className='dark:bg-darkBg dark:text-white border w-[100vw]  sm:w-[35rem] md:[37rem] lg:w-[36rem] h-fit'>
             {id}
+
+            <div className='flex'>  {useChartDays.map((val) =>
+                <div key={val.duration} className='border p-[0.5px] text-center w-[4.5rem]' onClick={() => setCoinChart({ ...coinChart, days: val.duration })}>{val.time}</div>
+            )
+            }</div>
+
             <Line className=''
                 data={data}
                 options={{
@@ -100,7 +111,7 @@ const CoinChart = ({ id }) => {
                     },
 
                 }} />
-        </div>
+        </div >
     )
 }
 
