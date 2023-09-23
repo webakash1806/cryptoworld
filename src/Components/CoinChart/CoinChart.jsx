@@ -131,7 +131,7 @@ const CoinChart = (props) => {
     }
 
     return (
-        <div className='dark:bg-darkBg dark:text-white border w-[100vw]  sm:w-[35rem] md:[37rem] lg:w-[36rem] h-fit'>
+        <div className='flex flex-col items-center dark:bg-darkBg dark:text-white w-[100vw]  sm:w-[35rem] md:w-[35rem] xmd:w-[60vw] lg:w-[40rem] h-fit lg:h-[30rem]'>
             {id}
 
             <div className='flex '>  {useChartDays.map((val) =>
@@ -139,7 +139,7 @@ const CoinChart = (props) => {
             )
             }</div >
 
-            <div className='flex pr-1 md:pr-3 items-center justify-center w-[100vw]  sm:w-[35rem] md:[37rem] lg:w-[36rem] min-h-[15rem] h-fit'>
+            <div className='flex pr-1 md:pr-2 xmd:pr-4 items-center justify-center w-[100vw]  sm:w-[35rem] md:w-[34rem] xmd:w-[60vw] lg:w-[40rem] min-h-[15rem] h-fit'>
                 {coinChart.isLoading === true ? <Loading /> :
                     <Line className=''
                         data={data}
