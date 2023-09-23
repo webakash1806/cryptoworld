@@ -29,7 +29,8 @@ ChartJS.register(
 )
 
 const CoinChart = (props) => {
-    const { id, per24, per1yr, per7, per14, per30 } = props
+
+    const { id, per24, per1yr, per7, per14, per30, per60 } = props
     const [coinChart, setCoinChart] = useCoinChart()
     const [err, setErr] = useState(per24)
 
@@ -44,6 +45,9 @@ const CoinChart = (props) => {
         else if (coinChart.days === '30') {
             setErr(per30)
         }
+        else if (coinChart.days === '60') {
+            setErr(per60)
+        }
         else if (coinChart.days === '365') {
             setErr(per1yr)
         }
@@ -51,7 +55,7 @@ const CoinChart = (props) => {
             setErr(per24)
         }
 
-    }, [coinChart.days, per24, per1yr, per7, per14, per30, setErr])
+    }, [coinChart.days, per24, per1yr, per7, per14, per30, per60, setErr])
 
     const labels = coinChart.coinChartData.map((coin) => {
         let date = new Date(coin[0])
@@ -68,7 +72,7 @@ const CoinChart = (props) => {
             borderColor: err < 0 ? '#DC2626' : '#10B981',
             borderWidth: 2,
             tension: 0.1,
-            backgroundColor: err < 0 ? '#492121' : '#193114',
+            backgroundColor: err < 0 ? '#ff000053' : '#1eb50058',
             fill: true,
             color: 'white'
         }]

@@ -5,29 +5,29 @@ import CoinChart from '../CoinChart/CoinChart'
 import CoinConverterCard from './SingleCoinCards/CoinConverterCard'
 import useSingleCoin from '../../Hooks/useSingleCoin'
 import CoinDataCard from './SingleCoinCards/CoinDataCard'
+import CoinPerCard from './SingleCoinCards/CoinPerCard'
 
 const CoinData = () => {
     const [singleCoin, setSingleCoin] = useSingleCoin()
-    console.log(singleCoin)
-    const { image, rank, desc, name, price, symbol, marketCap, vol, high24, low24, per24, per1yr, per7, per30, per14 } = singleCoin.singleData
+    // console.log(singleCoin)
+    const { image, rank, desc, name, price, symbol, marketCap, vol, high24, low24, per24, per1yr, per7, per30, per60, per14 } = singleCoin.singleData
 
     const { id } = useParams()
-    // console.log(singleCoin.singleData.desc)
 
     useEffect(() => {
         setSingleCoin({ ...singleCoin, id: id })
     }, [id])
 
-    // console.log(id)
     return (
         <div>
             <Header />
-            <div className='mt-12'>
-                {id} Data is coming soon
+            <div className='pt-16 dark:bg-darkBg dark:text-white w-screen flex flex-col items-center'>
+                {id} Data is under development....
                 <CoinDataCard id={id} rank={rank} name={name} symbol={symbol} img={image} price={price} high24={high24} low24={low24} per24={per24} marketCap={marketCap} vol={vol} />
                 <CoinConverterCard symbol={symbol} price={price} />
                 <div>
-                    <CoinChart id={id} per24={per24} per1yr={per1yr} per7={per7} per30={per30} per14={per14} />
+                    <CoinChart id={id} per24={per24} per1yr={per1yr} per7={per7} per30={per30} per14={per14} per60={per60} />
+                    <CoinPerCard per24={per24} per1yr={per1yr} per7={per7} per30={per30} per14={per14} per60={per60} />
                 </div>
             </div>
 

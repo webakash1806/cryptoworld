@@ -15,6 +15,8 @@ const useSingleCoin = () => {
         setSingleCoin({ ...singleCoin, isLoading: true })
         const id = singleCoin.id
         const singleCoinEndpoint = singleCoinData(id)
+        const decimalPlace = { maximumFractionDigits: 2 }
+
         if (singleCoin.id === '') {
             setSingleCoin({ ...singleCoin, isLoading: true })
         }
@@ -32,11 +34,12 @@ const useSingleCoin = () => {
                 vol: response.data.market_data.total_volume.inr,
                 high24: response.data.market_data.high_24h.inr,
                 low24: response.data.market_data.low_24h.inr,
-                per24: response.data.market_data.price_change_percentage_24h_in_currency.inr,
-                per1yr: response.data.market_data.price_change_percentage_1y_in_currency.inr,
-                per7: response.data.market_data.price_change_percentage_7d_in_currency.inr,
-                per30: response.data.market_data.price_change_percentage_30d_in_currency.inr,
-                per14: response.data.market_data.price_change_percentage_14d_in_currency.inr,
+                per24: response.data.market_data.price_change_percentage_24h_in_currency.inr === undefined ? "---" : `${Intl.NumberFormat("en-IN", decimalPlace).format(response.data.market_data.price_change_percentage_24h_in_currency.inr)}`,
+                per1yr: response.data.market_data.price_change_percentage_1y_in_currency.inr === undefined ? "---" : `${Intl.NumberFormat("en-IN", decimalPlace).format(response.data.market_data.price_change_percentage_1y_in_currency.inr)}`,
+                per7: response.data.market_data.price_change_percentage_7d_in_currency.inr === undefined ? "---" : `${Intl.NumberFormat("en-IN", decimalPlace).format(response.data.market_data.price_change_percentage_7d_in_currency.inr)}`,
+                per14: response.data.market_data.price_change_percentage_14d_in_currency.inr === undefined ? "---" : `${Intl.NumberFormat("en-IN", decimalPlace).format(response.data.market_data.price_change_percentage_14d_in_currency.inr)}`,
+                per30: response.data.market_data.price_change_percentage_30d_in_currency.inr === undefined ? "---" : `${Intl.NumberFormat("en-IN", decimalPlace).format(response.data.market_data.price_change_percentage_30d_in_currency.inr)}`,
+                per60: response.data.market_data.price_change_percentage_60d_in_currency.inr === undefined ? "---" : `${Intl.NumberFormat("en-IN", decimalPlace).format(response.data.market_data.price_change_percentage_60d_in_currency.inr)}`,
             }
             setSingleCoin({ ...singleCoin, isLoading: false, singleData: singleCoinDetail })
         }

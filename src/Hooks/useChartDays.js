@@ -16,8 +16,8 @@ const days = [
         'time': '30d'
     },
     {
-        'duration': '90',
-        'time': '90d'
+        'duration': '60',
+        'time': '60d'
     },
     {
         'duration': '365',
