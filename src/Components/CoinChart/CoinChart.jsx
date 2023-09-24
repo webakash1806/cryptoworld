@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import useCoinChart from '../../Hooks/useCoinChart'
 import useChartDays from '../../Hooks/useChartDays'
 import Loading from '../Loading/Loading'
+import SelectedDay from './SelectedDay'
 import { Chart, Interaction } from 'chart.js';
 import { CrosshairPlugin, Interpolate } from 'chartjs-plugin-crosshair';
 Chart.register(CrosshairPlugin);
@@ -139,8 +140,8 @@ const CoinChart = (props) => {
 
             <p><span className='uppercase font-semibold text-[18px]'>{name}</span> Price Chart </p>
 
-            <div className='flex border-2 p-[0px_0px]  rounded-md border-grey '>  {useChartDays.map((val) =>
-                <div key={val.duration} className='border border-grey p-[5px_10px] text-center w-fit xs:p-[3.5px_20px] cursor-pointer' onClick={() => setCoinChart({ ...coinChart, days: val.duration })}> {val.time}</ div>
+            <div className='flex items-center justify-center  '>  {useChartDays.map((val) =>
+                <SelectedDay key={val.duration} onClick={() => setCoinChart({ ...coinChart, days: val.duration })} clicked={val.duration === coinChart.days}> {val.time}</ SelectedDay>
             )
             }</div >
 
