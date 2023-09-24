@@ -135,12 +135,12 @@ const CoinChart = (props) => {
     }
 
     return (
-        <div className='flex flex-col gap-4 items-center dark:bg-darkBg dark:text-white w-[100vw]  sm:w-[35rem] md:w-[35rem] xmd:w-[vw] lg:w-[40rem] h-fit lg:h-[30rem]'>
+        <div className='flex flex-col gap-4 items-center dark:bg-darkBg dark:text-white w-[100vw]  sm:w-[35rem] md:w-[35rem] xmd:w-[57vw] lg:w-[40rem] h-fit lg:h-[30rem]'>
 
             <p><span className='uppercase font-semibold text-[18px]'>{name}</span> Price Chart </p>
 
             <div className='flex border-2 p-[0px_0px]  rounded-md border-grey '>  {useChartDays.map((val) =>
-                <div key={val.duration} className='border border-grey p-[5px_10px] text-center w-fit xs:p-[5px_20px] cursor-pointer' onClick={() => setCoinChart({ ...coinChart, days: val.duration })}> {val.time}</ div>
+                <div key={val.duration} className='border border-grey p-[5px_10px] text-center w-fit xs:p-[3.5px_20px] cursor-pointer' onClick={() => setCoinChart({ ...coinChart, days: val.duration })}> {val.time}</ div>
             )
             }</div >
 

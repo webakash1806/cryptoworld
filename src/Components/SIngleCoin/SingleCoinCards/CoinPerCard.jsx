@@ -15,12 +15,12 @@ const CoinPerCard = (props) => {
                         <td className=' w-fit xs:p-[5px_20px] text-center'>1yr</td>
                     </tr>
                     <tr className='text-center p-[5px_10px] w-fit xs:p-[5px_20px]'>
-                        <td className={(per24 < 0) ? `text-red  border-r border-grey w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813] border-r border-grey w-fit xs:p-[5px_20px]`}>per24</td>
-                        <td className={(per7 < 0) ? `text-red  border-r border-grey w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813] border-r border-grey w-fit xs:p-[5px_20px]`}>per7</td>
-                        <td className={(per14 < 0) ? `text-red  border-r border-grey w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813] border-r border-grey w-fit xs:p-[5px_20px]`}>per14</td>
-                        <td className={(per30 < 0) ? `text-red  border-r border-grey w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813] border-r border-grey w-fit xs:p-[5px_20px]`}>per30</td>
-                        <td className={(per60 < 0) ? `text-red  border-r border-grey w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813] border-r border-grey w-fit xs:p-[5px_20px]`}>per60</td>
-                        <td className={(per1yr < 0) ? `text-red   w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813]  w-fit xs:p-[5px_20px]`}>per1yr</td>
+                        <td className={(per24 < 0) ? `text-red  border-r border-grey w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813] border-r border-grey w-fit xs:p-[5px_20px]`}>{per24}%</td>
+                        <td className={(per7 < 0) ? `text-red  border-r border-grey w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813] border-r border-grey w-fit xs:p-[5px_20px]`}>{per7}%</td>
+                        <td className={(per14 < 0) ? `text-red  border-r border-grey w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813] border-r border-grey w-fit xs:p-[5px_20px]`}>{per14}%</td>
+                        <td className={(per30 < 0) ? `text-red  border-r border-grey w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813] border-r border-grey w-fit xs:p-[5px_20px]`}>{per30}%</td>
+                        <td className={(per60 < 0) ? `text-red  border-r border-grey w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813] border-r border-grey w-fit xs:p-[5px_20px]`}>{per60}%</td>
+                        <td className={(per1yr < 0) ? `text-red   w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813]  w-fit xs:p-[5px_20px]`}>{per1yr}%</td>
                     </tr>
                 </tbody>
             </table>
