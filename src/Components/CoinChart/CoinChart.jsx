@@ -134,8 +134,8 @@ const CoinChart = (props) => {
         <div className='flex flex-col items-center dark:bg-darkBg dark:text-white w-[100vw]  sm:w-[35rem] md:w-[35rem] xmd:w-[vw] lg:w-[40rem] h-fit lg:h-[30rem]'>
             {id}
 
-            <div className='flex border-2 p-[0px_0px] border-black rounded-md '>  {useChartDays.map((val) =>
-                <div key={val.duration} className='border p-[5px_10px] text-center w-fit cursor-pointer' onClick={() => setCoinChart({ ...coinChart, days: val.duration })}> {val.time}</ div>
+            <div className='flex border-2 p-[0px_0px]  rounded-md '>  {useChartDays.map((val) =>
+                <div key={val.duration} className='border p-[5px_10px] text-center w-fit xs:p-[5px_20px] cursor-pointer' onClick={() => setCoinChart({ ...coinChart, days: val.duration })}> {val.time}</ div>
             )
             }</div >
 

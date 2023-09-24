@@ -3,31 +3,27 @@ import React from 'react'
 const CoinPerCard = (props) => {
     const { per24, per7, per14, per30, per60, per1yr } = props
     return (
-        <div className='flex'>
-            <div>
-                <p>24hr</p>
-                <p>{per24}</p>
-            </div>
-            <div>
-                <p>7d</p>
-                <p>{per7}</p>
-            </div>
-            <div>
-                <p>14d</p>
-                <p>{per14}</p>
-            </div>
-            <div>
-                <p>30d</p>
-                <p>{per30}</p>
-            </div>
-            <div>
-                <p>60d</p>
-                <p>{per60}</p>
-            </div>
-            <div>
-                <p>1Year</p>
-                <p>{per1yr}</p>
-            </div>
+        <div className='border rounded-[5px]'>
+            <table >
+                <tbody className=''>
+                    <tr className='p-[5px_10px]  w-fit xs:p-[5px_20px] text-center border-b'>
+                        <td className='border-r w-fit xs:p-[5px_20px] text-center'>24hr</td>
+                        <td className='border-r w-fit xs:p-[5px_20px] text-center'>7d</td>
+                        <td className='border-r w-fit xs:p-[5px_20px] text-center'>14d</td>
+                        <td className='border-r w-fit xs:p-[5px_20px] text-center'>30d</td>
+                        <td className='border-r w-fit xs:p-[5px_20px] text-center'>60d</td>
+                        <td className=' w-fit xs:p-[5px_20px] text-center'>1yr</td>
+                    </tr>
+                    <tr className='text-center p-[5px_10px] w-fit xs:p-[5px_20px]'>
+                        <td className={(per24 < 0) ? `text-red  border-r w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813] border-r w-fit xs:p-[5px_20px]`}>per24</td>
+                        <td className={(per7 < 0) ? `text-red  border-r w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813] border-r w-fit xs:p-[5px_20px]`}>per7</td>
+                        <td className={(per14 < 0) ? `text-red  border-r w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813] border-r w-fit xs:p-[5px_20px]`}>per14</td>
+                        <td className={(per30 < 0) ? `text-red  border-r w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813] border-r w-fit xs:p-[5px_20px]`}>per30</td>
+                        <td className={(per60 < 0) ? `text-red  border-r w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813] border-r w-fit xs:p-[5px_20px]`}>per60</td>
+                        <td className={(per1yr < 0) ? `text-red   w-fit xs:p-[5px_20px]` : `dark:text-green text-[#259813] border-r w-fit xs:p-[5px_20px]`}>per1yr</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     )
 }

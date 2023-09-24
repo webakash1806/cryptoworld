@@ -22,11 +22,11 @@ const CoinData = () => {
         <div className=' dark:bg-darkBg w-screen overflow-hidden dark:text-white items-center justify-between min-h-screen'>
             <Header />
             <div className='pt-20 lg:pt-24 dark:bg-darkBg dark:text-white  flex flex-col items-center xmd:items-start justify-center gap-4 xmd:flex-row'>
-                <div className=' xmd:border-r-2 xmd:border-r-[#303030] w-[100%] min-[18rem] xs:p-[2px_30px] sm:p-[2px_7rem] md:p-[2px_9rem] xmd:p-[2px_2px] xmd:w-[40%] lg:w-[30%]'>
+                <div className=' xmd:border-r-2 xmd:border-r-grey w-[100%] min-[18rem] xs:p-[2px_30px] sm:p-[2px_7rem] md:p-[2px_9rem] xmd:p-[2px_2px] xmd:w-[40%] lg:w-[30%]'>
                     <CoinDataCard id={id} rank={rank} name={name} symbol={symbol} img={image} price={price} high24={high24} low24={low24} per24={per24} marketCap={marketCap} vol={vol} />
                     <CoinConverterCard symbol={symbol} price={price} />
                 </div>
-                <div>
+                <div className='flex flex-col items-center justify-center gap-4'>
                     <CoinChart id={id} per24={per24} per1yr={per1yr} per7={per7} per30={per30} per14={per14} per60={per60} />
                     <CoinPerCard per24={per24} per1yr={per1yr} per7={per7} per30={per30} per14={per14} per60={per60} />
                 </div>
