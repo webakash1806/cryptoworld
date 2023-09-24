@@ -33,6 +33,13 @@ const CoinChart = (props) => {
     const { id, per24, per1yr, per7, per14, per30, per60 } = props
     const [coinChart, setCoinChart] = useCoinChart()
     const [err, setErr] = useState(per24)
+    const [active, setActive] = useState(false)
+
+    const changeColor = () => {
+        setActive(true)
+    }
+
+    console.log(active)
 
     useEffect(() => {
         setCoinChart({ ...coinChart, coinID: id })
@@ -54,8 +61,9 @@ const CoinChart = (props) => {
         else if (coinChart.days === '1') {
             setErr(per24)
         }
+        changeColor()
 
-    }, [coinChart.days, per24, per1yr, per7, per14, per30, per60, setErr])
+    }, [coinChart.days, per24, per1yr, per7, per14, per30, per60, setErr,])
 
     const labels = coinChart.coinChartData.map((coin) => {
         let date = new Date(coin[0])
@@ -131,15 +139,24 @@ const CoinChart = (props) => {
     }
 
     return (
-        <div className='flex flex-col items-center dark:bg-darkBg dark:text-white w-[100vw]  sm:w-[35rem] md:w-[35rem] xmd:w-[60vw] lg:w-[40rem] h-fit lg:h-[30rem]'>
+        <div className='flex flex-col items-center dark:bg-darkBg dark:text-white w-[100vw]  sm:w-[35rem] md:w-[35rem] xmd:w-[57vw] lg:w-[40rem] h-fit lg:h-[30rem]'>
             {id}
 
             <div className='flex '>  {useChartDays.map((val) =>
-                <div key={val.duration} className='border p-[0.5px] text-center w-[4.5rem] cursor-pointer' onClick={() => setCoinChart({ ...coinChart, days: val.duration })}> {val.time}</ div>
+                <div key={val.duration} className='border p-[0.5px] text-center w-[4.5rem] cursor-pointer'
+                    onClick={() => {
+                        setCoinChart({ ...coinChart, days: val.duration })
+                        changeColor
+                    }}
+                    style={{ backgroundColor: active ? 'grey' : 'transparent' }}
+
+                > {val.time}
+
+                </ div>
             )
             }</div >
 
-            <div className='flex pr-1 md:pr-2 xmd:pr-4 items-center justify-center w-[100vw]  sm:w-[35rem] md:w-[34rem] xmd:w-[60vw] lg:w-[40rem] min-h-[15rem] h-fit'>
+            <div className='flex pr-1 md:pr-2 xmd:pr-4 items-center justify-center w-[100vw]  sm:w-[35rem] md:w-[34rem] xmd:w-[57vw] lg:w-[40rem] min-h-[15rem] h-fit'>
                 {coinChart.isLoading === true ? <Loading /> :
                     <Line className=''
                         data={data}

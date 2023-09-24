@@ -12,8 +12,8 @@ const CoinDataCard = (props) => {
             <div className='flex items-center gap-2'><img src={img} alt={`${name}image`} className='w-[2.2rem]' /><span className='font-bold text-[23px]'>{name}<span className='ml-1 uppercase font-semibold text-[16px] text-grey'>{symbol}</span></span></div>
             <p className="font-bold text-[30px]">&#8377;{price === undefined ? "---" : `${Intl.NumberFormat("en-IN", decimalPlace).format(price)}`}
                 <span className={(per24 < 0) ? ` font-semibold text-red text-[20px] ml-2` : `dark:text-green text-[#259813] text-[20px] ml-2 font-semibold`}>{per24}%</span></p>
-            <div className='flex flex-col p-2 min-w-[18rem] items-center'>
-                <p>24H Range</p>
+            <div className='flex flex-col p-2 min-w-[18rem] items-center bg-[#edf5fe] dark:text-white dark:bg-[#1f2123]'>
+                <p className='font-semibold'>24hr Range</p>
                 <meter className="w-full" min={low24} max={high24} value={price} ></meter>
                 <div className='flex items-center justify-between w-full'> <p>&#8377;{low24}</p><p>&#8377;{high24}</p> </div>
             </div>
