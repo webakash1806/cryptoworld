@@ -30,7 +30,7 @@ ChartJS.register(
 
 const CoinChart = (props) => {
 
-    const { id, per24, per1yr, per7, per14, per30, per60 } = props
+    const { id, name, per24, per1yr, per7, per14, per30, per60 } = props
     const [coinChart, setCoinChart] = useCoinChart()
     const [err, setErr] = useState(per24)
 
@@ -101,25 +101,29 @@ const CoinChart = (props) => {
                 grace: '10%',
                 ticks: {
                     mirror: 'true',
-                    color: 'grey',
+                    color: '#808080',
                     z: 1,
                     stepSize: 0.01,
                     minTicksLimit: 5,
                     maxTicksLimit: 8,
                 },
                 border: {
-                    color: 'black'
+                    color: '#808080'
                 }
             },
             x: {
                 offset: true,
                 ticks: {
+                    color: '#808080',
                     display: true,
                     minTicksLimit: 2,
                     maxTicksLimit: 6,
                 },
                 grid: {
                     display: false
+                },
+                border: {
+                    color: '#808080'
                 }
             },
         },
@@ -131,11 +135,12 @@ const CoinChart = (props) => {
     }
 
     return (
-        <div className='flex flex-col items-center dark:bg-darkBg dark:text-white w-[100vw]  sm:w-[35rem] md:w-[35rem] xmd:w-[vw] lg:w-[40rem] h-fit lg:h-[30rem]'>
-            {id}
+        <div className='flex flex-col gap-4 items-center dark:bg-darkBg dark:text-white w-[100vw]  sm:w-[35rem] md:w-[35rem] xmd:w-[vw] lg:w-[40rem] h-fit lg:h-[30rem]'>
 
-            <div className='flex border-2 p-[0px_0px]  rounded-md '>  {useChartDays.map((val) =>
-                <div key={val.duration} className='border p-[5px_10px] text-center w-fit xs:p-[5px_20px] cursor-pointer' onClick={() => setCoinChart({ ...coinChart, days: val.duration })}> {val.time}</ div>
+            <p><span className='uppercase font-semibold text-[18px]'>{name}</span> Price Chart </p>
+
+            <div className='flex border-2 p-[0px_0px]  rounded-md border-grey '>  {useChartDays.map((val) =>
+                <div key={val.duration} className='border border-grey p-[5px_10px] text-center w-fit xs:p-[5px_20px] cursor-pointer' onClick={() => setCoinChart({ ...coinChart, days: val.duration })}> {val.time}</ div>
             )
             }</div >
 
