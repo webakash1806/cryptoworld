@@ -4,9 +4,7 @@ const ListHeaderList = ({ url, list }) => {
     return (
         <div className="">
             <NavLink
-                style={({ isActive }) => ({
-                    color: isActive ? '#f4c323' : 'white'
-                })}
+                className={({ isActive }) => (isActive ? 'text-[#f4c323]' : 'text-black dark:text-white')}
                 to={url}>{list}</NavLink>
         </div>
     )
