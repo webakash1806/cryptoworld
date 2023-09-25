@@ -3,6 +3,7 @@ import DarkModeToggle from "../../../Hooks/DarkModeToggle"
 import HeaderList from './HeaderList'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
+import useHeaderList from '../../../Hooks/useHeaderList'
 
 const Header = () => {
 
@@ -11,13 +12,6 @@ const Header = () => {
     const hamActive = () => {
         barActive ? setBarActive(false) : setBarActive(true)
     }
-
-    const headerList = [{ "url": "/cryptoworld", "list": "Home" },
-    { url: "/cryptoworld/about", "list": "About" },
-    { url: "/cryptoworld/FAQ", "list": "FAQ" },
-    { url: "/cryptoworld/contact", "list": "Contact" },
-    { url: "/cryptoworld/projects", "list": "Projects" }]
-
 
 
     return (
@@ -31,7 +25,7 @@ const Header = () => {
             ${barActive ? "top-[2.95rem] left-[-60rem] duration-[0.5s]" : "top-[2.85rem] left-0 duration-[0.5s]"}
              md:flex-row md:static `}>
                 <div className="flex flex-col md:flex-row gap-3 md:gap-0 ">
-                    {headerList.map((val) => <HeaderList key={val.list} url={val.url} list={val.list} />)}
+                    {useHeaderList.map((val) => <HeaderList key={val.list} url={val.url} list={val.list} />)}
                 </div>
                 <button className='w-[90vw] bg-[#F7931A] rounded-md md:w-fit p-3 mt-6 md:m-0 md:mr-4 md:p-[6px_16px] md:rounded-[4px] md hover:bg-[#dfab00] duration-300'>Login/Signup</button>
             </nav>

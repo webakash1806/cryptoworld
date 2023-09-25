@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { singleCoinData } from "./useApiEndpoints"
 import axios from "axios"
+import Alert from '@mui/material/Alert'
 
 const useSingleCoin = () => {
 
@@ -52,7 +53,8 @@ const useSingleCoin = () => {
                 const networkErr = error.code === "ERR_NETWORK"
                 if (networkErr === true) {
                     // console.log(networkErr)
-                    alert("No internet")
+                    alert("Network Error")
+
                 }
             }
         }

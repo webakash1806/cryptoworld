@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 const ListHeaderList = ({ url, list }) => {
     return (
         <div className="">
-            <Link to={url}>{list}</Link>
+            <NavLink
+                style={({ isActive }) => ({
+                    color: isActive ? '#f4c323' : 'white'
+                })}
+                to={url}>{list}</NavLink>
         </div>
     )
 }
