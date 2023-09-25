@@ -25,8 +25,7 @@ const CoinData = () => {
         <div className=' dark:bg-darkBg w-screen overflow-hidden dark:text-white items-center justify-center min-h-screen'>
             <Header />
             {singleCoin.isLoading === true ?
-                <div className='flex items-center justify-center w-[100%]  xmd:w-[40%] lg:w-[30%]'>
-                    <Loading /></div> :
+                <Loading /> :
                 <div>
                     <div className='pt-20 lg:pt-24 dark:bg-darkBg dark:text-white border-b-2 pb-10  border-[#d9d8d8bf]  flex flex-col items-center  justify-center gap-4 xmd:flex-row'>
                         <div className=' xmd:border-r-2 xmd:border-[#d9d8d8bf] dark:xmd:border-[#1F2123] w-[100%] min-[18rem] xs:p-[2px_30px] sm:p-[2px_7rem] md:p-[2px_9rem] xmd:p-[2px_2px] xmd:w-[40%] lg:w-[30%]'>
