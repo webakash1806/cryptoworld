@@ -9,6 +9,7 @@ import CoinPerCard from './SingleCoinCards/CoinPerCard'
 import Loading from '../Loading/Loading'
 import CoinDesc from './SingleCoinCards/CoinDesc'
 import HtmlReactParser from 'html-react-parser'
+import Footer from '../Footer/Footer'
 
 const CoinData = () => {
     const [singleCoin, setSingleCoin] = useSingleCoin()
@@ -22,12 +23,14 @@ const CoinData = () => {
     }, [id])
 
     return (
-        <div className=' dark:bg-darkBg w-screen overflow-hidden dark:text-white items-center justify-center min-h-screen'>
+        <div className=' dark:bg-darkBg w-screen overflow-hidden dark:text-white items-center justify-between min-h-[100vh]'>
             <Header />
             {singleCoin.isLoading === true ?
-                <Loading /> :
-                <div>
-                    <div className='pt-20 lg:pt-24 dark:bg-darkBg dark:text-white border-b-2 pb-10  border-[#d9d8d8bf]  flex flex-col items-center  justify-center gap-4 xmd:flex-row'>
+                <div className='w-full h-[70vw] flex items-center justify-center'>
+                    <Loading /></div>
+                :
+                <>
+                    <div className='pt-16 lg:pt-24 dark:bg-darkBg dark:text-white border-b-2 pb-10  border-[#d9d8d8bf]  flex flex-col items-center  justify-center gap-4 xmd:flex-row'>
                         <div className=' xmd:border-r-2 xmd:border-[#d9d8d8bf] dark:xmd:border-[#1F2123] w-[100%] min-[18rem] xs:p-[2px_30px] sm:p-[2px_7rem] md:p-[2px_9rem] xmd:p-[2px_2px] xmd:w-[40%] lg:w-[30%]'>
                             <CoinDataCard id={id} rank={rank} name={name} symbol={symbol} img={image} price={price} high24={high24} low24={low24} per24={per24} marketCap={marketCap} vol={vol} />
                             <CoinConverterCard symbol={symbol} price={price} name={name} />
@@ -40,9 +43,9 @@ const CoinData = () => {
                     <div className='pt-10 lg:pt-24 dark:bg-darkBg dark:text-white  flex flex-col items-center  justify-center gap-4 xmd:flex-row'>
                         <div className='p-3 xsm:p-4 w-[100%] min-[18rem] xs:p-[2px_30px] sm:p-[2px_7rem] md:p-[2px_9rem] xmd:p-[2px_2px] xmd:w-[58%] lg:w-[60%]'> <CoinDesc desc={HtmlReactParser(description)} name={name} /></div>
                     </div>
-                </div>
+                </>
             }
-
+            <Footer />
         </div>
     )
 }
