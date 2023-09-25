@@ -18,7 +18,7 @@ const CoinList = () => {
             <Header />
             <div className=' w-full shadow-[0px_0px_40px_#1d037b80] bg-[#12073ac5] h-[18.6rem] sm:h-[20rem] md:h-[22rem] lg:h-[24rem] flex flex-col items-center justify-center bg-no-repeat bg-cover'
                 style={{ backgroundImage: `linear-gradient(#230e785a, #00000087),url(${bannerImage})`, backgroundPosition: 'center' }}>
-                <p className='pt-[3.5rem] pb-[2rem] text-[2.3rem] text-white md:text-[3rem] lg:text-[3.2rem] font-mono font-bold'>CrytoWorld</p>
+                <p className='pt-[3.5rem] pb-[2rem] text-[2.3rem] text-white md:text-[3rem] lg:text-[3.2rem] font-mono font-bold'>CryptoWorld</p>
                 <div ><TrendingCoin /></div>
             </div>
             <div className="flex flex-col items-center">
