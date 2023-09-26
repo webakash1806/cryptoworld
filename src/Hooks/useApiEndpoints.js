@@ -27,5 +27,5 @@ export const singleExchange = (id) => {
 }
 
 export const exchangeSparkline = (id, day = 1) => {
-    return `https://api.coingecko.com/api/v3/exchanges/${id}/volume_chart?days=${day}`
+    return `https://api.coingecko.com/api/v3/exchanges/${id}/volume_chart?vs_currency=INR&days=${day}`
 }
