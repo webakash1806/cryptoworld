@@ -32,7 +32,7 @@ const ExchangeChart = ({ id }) => {
     const [chartData, setChartData] = useExchangeChart()
 
     useEffect(() => {
-        setChartData({ ...chartData, id: id, days: '365' })
+        setChartData({ ...chartData, id: id, days: '1' })
 
     }, [setChartData])
 
@@ -99,7 +99,7 @@ const ExchangeChart = ({ id }) => {
                     color: '#808080',
                     display: true,
                     minTicksLimit: 2,
-                    maxTicksLimit: 6,
+                    maxTicksLimit: 5,
                 },
                 grid: {
                     display: false
@@ -121,7 +121,7 @@ const ExchangeChart = ({ id }) => {
     return (
         <div>
             exchange chart
-            <div className='flex pr-1 md:pr-2 xmd:pr-4 items-center justify-center w-[100vw]  sm:w-[35rem] md:w-[34rem] xmd:w-[57vw] lg:w-[40rem] min-h-[17rem] h-fit sm:h-[20rem]'>
+            <div className='flex pr-1 md:pr-2 xmd:pr-4 items-center justify-center w-[100vw] min-h-[20rem] xs:min-w-[27rem] xs:max-w-[35rem] xs:min-h-[26rem] sm:min-w-[20rem] sm:max-w-[36rem] xmd:w-[60vw] xmd:min-h-[23.7rem] lg:w-[40rem]'>
                 {chartData.isLoading === true ? <Loading /> :
                     <Line className=''
                         data={data}
