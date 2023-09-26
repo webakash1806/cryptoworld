@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import useExchangeChart from '../../../Hooks/useExchangeChart'
 import Loading from '../../Loading/Loading';
+import SelectedDay from '../../CoinChart/SelectedDay';
+import useExchangeDays from '../../../Hooks/useExchangeDays'
 import { Chart, Interaction } from 'chart.js';
 import { CrosshairPlugin, Interpolate } from 'chartjs-plugin-crosshair';
 Chart.register(CrosshairPlugin);
@@ -35,8 +37,6 @@ const ExchangeChart = ({ id }) => {
         setChartData({ ...chartData, id: id, days: '1' })
 
     }, [setChartData])
-
-
 
 
     const labels = chartData.exchangeChartData.map((exch) => {
@@ -121,6 +121,11 @@ const ExchangeChart = ({ id }) => {
     return (
         <div>
             exchange chart
+            <div className='flex items-center justify-center  '>  {useExchangeDays.map((val) =>
+                <SelectedDay key={val.duration} onClick={() => setChartData({ ...chartData, days: val.duration })} clicked={val.duration === chartData.days}> {val.time}</ SelectedDay>
+            )
+            }</div >
+
             <div className='flex pr-1 md:pr-2 xmd:pr-4 items-center justify-center w-[100vw] min-h-[20rem] xs:min-w-[27rem] xs:max-w-[35rem] xs:min-h-[26rem] sm:min-w-[20rem] sm:max-w-[36rem] xmd:w-[60vw] xmd:min-h-[23.7rem] lg:w-[40rem]'>
                 {chartData.isLoading === true ? <Loading /> :
                     <Line className=''
