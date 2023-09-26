@@ -9,7 +9,7 @@ const ExchangeData = () => {
         <div>
             <Header />
             <div className='pt-12'>{id} data coming soon...</div>
-            <ExchangeChart />
+            <ExchangeChart id={id} />
         </div>
     )
 }

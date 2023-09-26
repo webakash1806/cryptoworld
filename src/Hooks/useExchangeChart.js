@@ -5,7 +5,7 @@ import { exchangeSparkline } from './useApiEndpoints'
 const useExchangeChart = () => {
 
     const [chartData, setChartData] = useState({
-        exchangeChartData: '',
+        exchangeChartData: [],
         isLoading: false,
         days: '1',
         id: ''
@@ -21,8 +21,9 @@ const useExchangeChart = () => {
         }
         else {
             const response = await axios.get(exchangeChartEndpoint)
-            console.log(response)
-            setChartData({ ...chartData, isLoading: false, exchangeChartData: response })
+            console.log(response.data)
+            const data = response.data
+            setChartData({ ...chartData, isLoading: false, exchangeChartData: data })
         }
     }
 
