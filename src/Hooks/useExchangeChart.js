@@ -21,7 +21,6 @@ const useExchangeChart = () => {
         }
         else {
             const response = await axios.get(exchangeChartEndpoint)
-            console.log(response.data)
             const data = response.data
             setChartData({ ...chartData, isLoading: false, exchangeChartData: data })
         }
