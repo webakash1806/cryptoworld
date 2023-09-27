@@ -140,14 +140,14 @@ const CoinChart = (props) => {
 
             <p><span className='uppercase font-semibold text-[18px]'>{name}</span> Price Chart </p>
 
-            <div className='flex items-center justify-center  '>  {useChartDays.map((val) =>
+            <div className='bg-[#ececec6a] flex items-center justify-center w-fit p-[5.5px_8px] rounded-md dark:bg-[#2c2c2c] dark:shadow-[inset_0px_0px_5px_#191820] shadow-[inset_0px_0px_5px_#abaaac7c] '>  {useChartDays.map((val) =>
                 <SelectedDay key={val.duration}
                     onClick={() => setCoinChart({ ...coinChart, days: val.duration })}
                     clicked={val.duration === coinChart.days}> {val.time}</ SelectedDay>
             )
             }</div >
 
-            <div className='flex pr-1 md:pr-2 xmd:pr-4 items-center justify-center w-[100vw] min-h-[20rem] xs:min-w-[27rem] xs:max-w-[35rem] xs:min-h-[26rem] sm:min-w-[20rem] sm:max-w-[36rem] xmd:w-[60vw] xmd:min-h-[23.7rem] lg:w-[40rem]'>
+            <div className='flex pr-1  md:pr-2 xmd:pr-4 items-center justify-center w-[100vw] min-h-[20rem] xs:min-w-[27rem] xs:max-w-[35rem] xs:min-h-[26rem] sm:min-w-[20rem] sm:max-w-[36rem] xmd:w-[60vw] xmd:min-h-[23.7rem] lg:w-[40rem]'>
                 {coinChart.isLoading === true ? <Loading /> :
                     <Line className=''
                         data={data}

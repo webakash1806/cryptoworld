@@ -7,7 +7,7 @@ const ListHeader = () => {
 
     return (
         <>
-            <div className=" mt-2 mb-4 w-fit p-[5.5px_8px] rounded-md flex items-center justify-center dark:bg-[#2c2c2c] dark:shadow-[inset_0px_0px_5px_#191820] shadow-[inset_0px_0px_5px_#abaaac7c] text-center">
+            <div className=" mt-2 mb-4 bg-[#ececec6a] w-fit p-[5.5px_8px] rounded-md flex items-center justify-center dark:bg-[#2c2c2c] dark:shadow-[inset_0px_0px_5px_#191820] shadow-[inset_0px_0px_5px_#abaaac7c] text-center">
                 {headerList.map((val) => <ListHeaderList key={val.list} url={val.url} list={val.list} />)}
             </div>
         </>

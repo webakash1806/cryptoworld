@@ -29,7 +29,7 @@ ChartJS.register(
     Filler
 )
 
-const ExchangeChart = ({ id }) => {
+const ExchangeChart = ({ id, name }) => {
 
     const [chartData, setChartData] = useExchangeChart()
 
@@ -49,7 +49,7 @@ const ExchangeChart = ({ id }) => {
     const data = {
         labels: labels,
         datasets: [{
-            label: `${id} Chart`,
+            label: `${name} Chart in BTC`,
             data: chartData.exchangeChartData.map((exchData) => exchData[1]),
             borderColor: '#A22EFF',
             borderWidth: 2,
@@ -120,8 +120,8 @@ const ExchangeChart = ({ id }) => {
 
     return (
         <div className=' flex flex-col gap-4 items-center dark:bg-darkBg dark:text-white w-[100vw]  sm:w-[35rem] md:w-[35rem] xmd:w-[57vw] lg:w-[40rem] h-fit lg:h-[30rem]'>
-            <p>exchange chart</p>
-            <div className='flex items-center justify-center  '>  {useExchangeDays.map((val) =>
+            <p className='font-semibold text-[18.5px]'>{name} chart</p>
+            <div className='flex items-center justify-center w-fit p-[5.5px_8px] rounded-md dark:bg-[#2c2c2c] dark:shadow-[inset_0px_0px_5px_#191820] shadow-[inset_0px_0px_5px_#abaaac7c] bg-[#ececec6a]'>  {useExchangeDays.map((val) =>
                 <SelectedDay key={val.duration} onClick={() => setChartData({ ...chartData, days: val.duration })} clicked={val.duration === chartData.days}> {val.time}</ SelectedDay>
             )
             }</div >

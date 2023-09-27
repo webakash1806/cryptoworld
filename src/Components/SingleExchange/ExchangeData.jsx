@@ -37,7 +37,7 @@ const ExchangeData = () => {
                             ={vol24 * btcPrice} vol24nor={vol24nor * btcPrice} />
                     </div>
                     <div className='flex flex-col items-center justify-center gap-6'>
-                        <ExchangeChart id={id} />
+                        <ExchangeChart id={id} name={name} />
                     </div>
                 </div>
             </>}
