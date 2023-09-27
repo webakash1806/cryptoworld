@@ -6,6 +6,7 @@ import LeftSectionContainer from './SingleExchangeContainer/LeftSectionContainer
 import useSingleCoin from '../../Hooks/useSingleCoin'
 import { useParams } from 'react-router-dom'
 import Loading from '../Loading/Loading'
+import TickersList from './ExchangeTickersList.jsx/TickersList'
 
 const ExchangeData = () => {
     const { id } = useParams()
@@ -40,6 +41,7 @@ const ExchangeData = () => {
                         <ExchangeChart id={id} name={name} />
                     </div>
                 </div>
+                {exchangeData.tickers.map((val, ind) => <TickersList key={val.volume} rank={ind + 1} />)}
             </>}
         </div>
     )

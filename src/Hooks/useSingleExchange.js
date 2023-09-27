@@ -7,7 +7,8 @@ const useSingleExchange = () => {
     const [exchangeData, setExchangeData] = useState({
         isLoading: false,
         id: '',
-        singleExchange: []
+        singleExchange: [],
+        tickers: []
     })
 
     const fetchExchange = async () => {
@@ -21,6 +22,7 @@ const useSingleExchange = () => {
         else {
             const response = await axios.get(exchangeAPIEndpoint)
             const data = response.data
+            const tickers = data.tickers
             const singleData = {
                 fullData: data,
                 rank: data.trust_score_rank === null ? "---" : data.trust_score_rank,
@@ -33,7 +35,13 @@ const useSingleExchange = () => {
                 vol24: data.trade_volume_24h_btc,
                 vol24nor: data.trade_volume_24h_btc_normalized
             }
-            setExchangeData({ ...exchangeData, isLoading: false, singleExchange: singleData })
+            tickers.sort((a, b) => b.converted_volume.usd
+                - a.converted_volume.usd
+            )
+
+            setExchangeData({ ...exchangeData, isLoading: false, singleExchange: singleData, tickers: tickers })
+
+
         }
 
 
