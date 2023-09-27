@@ -14,7 +14,6 @@ const useSingleExchange = () => {
         setExchangeData({ ...exchangeData, isLoading: true })
         let id = exchangeData.id
         const exchangeAPIEndpoint = singleExchange(id)
-        const decimalPlace = { maximumFractionDigits: 2 }
 
         if (exchangeData.id === '') {
             setExchangeData({ ...exchangeData, isLoading: true })
@@ -23,8 +22,8 @@ const useSingleExchange = () => {
             const response = await axios.get(exchangeAPIEndpoint)
             const data = response.data
             const singleData = {
-                // fullData: data,
-                rank: data.trust_score_rank === null ? "---" : `${Intl.NumberFormat("en-IN", decimalPlace).format(data.trust_score_rank)}`,
+                fullData: data,
+                rank: data.trust_score_rank === null ? "---" : data.trust_score_rank,
                 name: data.name,
                 image: data.image,
                 cent: data.centralized,
