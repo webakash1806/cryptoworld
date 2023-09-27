@@ -141,7 +141,9 @@ const CoinChart = (props) => {
             <p><span className='uppercase font-semibold text-[18px]'>{name}</span> Price Chart </p>
 
             <div className='flex items-center justify-center  '>  {useChartDays.map((val) =>
-                <SelectedDay key={val.duration} onClick={() => setCoinChart({ ...coinChart, days: val.duration })} clicked={val.duration === coinChart.days}> {val.time}</ SelectedDay>
+                <SelectedDay key={val.duration}
+                    onClick={() => setCoinChart({ ...coinChart, days: val.duration })}
+                    clicked={val.duration === coinChart.days}> {val.time}</ SelectedDay>
             )
             }</div >
 

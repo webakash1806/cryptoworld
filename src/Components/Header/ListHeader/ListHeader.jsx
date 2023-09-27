@@ -8,7 +8,7 @@ const ListHeader = () => {
     console.log(headerList)
     return (
         <>
-            <div className="w-[100vw]  p-3 flex gap-5 items-center justify-center dark:bg-[#120d2b64] bg-transparent border-b border-[#b5b5b580] dark:border-[#6f6f6fab] text-center">
+            <div className=" mt-2 mb-4 w-fit p-[5.5px_8px] rounded-md flex items-center justify-center dark:bg-[#2c2c2c] dark:shadow-[inset_0px_0px_5px_#191820] shadow-[inset_0px_0px_5px_#abaaac7c] text-center">
                 {headerList.map((val) => <ListHeaderList key={val.list} url={val.url} list={val.list} />)}
             </div>
         </>

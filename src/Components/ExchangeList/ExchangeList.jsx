@@ -11,7 +11,7 @@ const ExchangeList = () => {
     const { excList, setExcList } = useContext(ListContext)
 
     return (
-        <div className="dark:bg-darkBg min-h-screen dark:text-white pt-[6rem] flex gap-3 pb-6 flex-col items-center justify-between">
+        <div className="min-w-screen dark:bg-darkBg min-h-screen dark:text-white pt-[6rem] flex gap-3 pb-6 flex-col items-center justify-between">
             <Header />
             <div className='flex flex-col items-center'>
                 <ListHeader />

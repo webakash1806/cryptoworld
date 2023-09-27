@@ -14,7 +14,7 @@ const CoinList = () => {
     const { list, setList } = useContext(ListContext)
 
     return (
-        <div className=" dark:bg-darkBg dark:text-white gap-4 pb-6  min-h-[100vh] flex flex-col items-center justify-between">
+        <div className="min-w-[100vw] dark:bg-darkBg dark:text-white gap-4 pb-6  min-h-[100vh] flex flex-col items-center justify-between">
             <Header />
             <div className=' w-full shadow-[0px_0px_40px_#1d037b80] bg-[#12073ac5] h-[18.6rem] sm:h-[20rem] md:h-[22rem] lg:h-[24rem] flex flex-col items-center justify-center bg-no-repeat bg-cover'
                 style={{ backgroundImage: `linear-gradient(#230e785a, #00000087),url(${bannerImage})`, backgroundPosition: 'center' }}>

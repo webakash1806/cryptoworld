@@ -2,11 +2,15 @@ import { NavLink } from "react-router-dom"
 
 const ListHeaderList = ({ url, list }) => {
     return (
-        <div className="">
-            <NavLink
-                className={({ isActive }) => (isActive ? 'text-[#f4c323]' : 'text-black dark:text-white')}
-                to={url}>{list}</NavLink>
-        </div>
+        <NavLink
+            style={({ isActive }) => ({
+                color: isActive ? '#fff' : '',
+                background: isActive ? '#A22EFF' : 'transparent',
+            })}
+
+            className='p-[3px_25px] font-semibold rounded-md'
+
+            to={url} end>{list}</NavLink>
     )
 }
 
