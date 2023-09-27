@@ -2,7 +2,6 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const FooterNav = ({ list, url }) => {
-    console.log(list)
     return (
         <NavLink style={({ isActive }) => ({
             color: isActive ? '#f4c323' : 'white'

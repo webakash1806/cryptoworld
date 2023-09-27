@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../Header/MainHeader/Header'
 import ExchangeChart from './ExchangeChart/ExchangeChart'
 import useSingleExchange from '../../Hooks/useSingleExchange'
@@ -9,6 +9,10 @@ const ExchangeData = () => {
     const { id } = useParams()
 
     const [exchangeData, setExchangeData] = useSingleExchange()
+
+    useEffect(() => {
+        setExchangeData({ ...exchangeData, id: id })
+    }, [setExchangeData])
 
     console.log(exchangeData)
 

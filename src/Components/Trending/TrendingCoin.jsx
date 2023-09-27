@@ -7,7 +7,6 @@ import Loading from '../Loading/Loading';
 
 const TrendingCoin = () => {
     const [trendingList, setTrendingList, isLoading] = useTrendingData()
-    console.log(trendingList)
     const responsive = {
         0: {
             items: 2,

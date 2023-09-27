@@ -11,7 +11,7 @@ const ExchangeListScroll = (props) => {
                     <p>{trustScore}</p>
                     <progress className="h-[5.5px] w-[5rem] md:h-2 sm:w-[6rem] md:w-[7rem] [&::-webkit-progress-bar]:rounded-lg  [&::-webkit-progress-value]:rounded-lg   [&::-webkit-progress-bar]:bg-grey [&::-webkit-progress-value]:bg-green " value={trustScore} max="10"></progress>
                 </div>
-                <p className="min-w-[7rem] sm:min-w-[8rem] md:min-w-[9rem] text-green-600 text-right dark:text-[#d1d1d1]">&#8377;{vol24hr === null ? "---" : `${Intl.NumberFormat("en-IN", decimalPlace).format(vol24hr)}`}</p>
+                <p className="min-w-[9.5rem] sm:min-w-[10.5rem] pr-1 md:min-w-[11.5rem] text-green-600 text-right dark:text-[#d1d1d1]">&#8377;{vol24hr === null ? "---" : `${Intl.NumberFormat("en-IN", decimalPlace).format(vol24hr)}`}</p>
             </div>
         </>
     )

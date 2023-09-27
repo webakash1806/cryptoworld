@@ -13,7 +13,7 @@ import Footer from '../Footer/Footer'
 
 const CoinData = () => {
     const [singleCoin, setSingleCoin] = useSingleCoin()
-    console.log(singleCoin)
+    // console.log(singleCoin)
     const { image, rank, desc, name, price, symbol, marketCap, vol, high24, low24, per24, per1yr, per7, per30, per60, per14 } = singleCoin.singleData
     const description = `"${desc}"`
     const { id } = useParams()

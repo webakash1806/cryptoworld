@@ -6,7 +6,7 @@ export const CoinDataAPI = (coinPageCount) => {
 
 // Exchange List endpoint
 export const ExchangeDataAPI = (exchangePageCount) => {
-    return `https://api.coingecko.com/api/v3/exchanges?per_page=100&page=${exchangePageCount}`
+    return `https://api.coingecko.com/api/v3/exchanges?vs_currency=INR&per_page=100&page=${exchangePageCount}`
 }
 
 //Trending Section Endpoint
