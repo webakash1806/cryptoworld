@@ -16,13 +16,13 @@ const App = () => {
 
       <Routes>
 
-        <Route path="/cryptoworld" element={<Home />} />
+        <Route exact path="/cryptoworld" element={<Home />} />
         <Route path="/cryptoworld/exchange" element={<ExchangeList />} />
         <Route path="/cryptoworld/about" element={<About />} />
         <Route path="/cryptoworld/FAQ" element={<FAQpage />} />
         <Route path="/cryptoworld/contact" element={<ContactPage />} />
         <Route path="/cryptoworld/projects" element={<ProjectPage />} />
-        <Route path="/cryptoworld/coin/:id" element={<CoinData />} />
+        <Route exact path="/cryptoworld/coin/:id" element={<CoinData />} />
         <Route path="/cryptoworld/exchange/:id" element={<ExchangeData />} />
       </Routes>
 
