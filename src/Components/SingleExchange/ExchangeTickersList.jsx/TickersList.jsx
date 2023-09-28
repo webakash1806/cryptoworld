@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+
 const TickersList = ({ rank, spread, base, target, price, volume, score }) => {
 
     const decimalPlace = { maximumFractionDigits: 2 }

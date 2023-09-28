@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleCheck, faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -25,7 +27,7 @@ const LeftSectionContainer = ({ cent, rank, image, name, vol24, vol24nor, countr
             </div>
 
             <div className=' flex flex-col min-w-[19rem] p-1 gap-3 text-[15px] text-grey'>
-                <p className='p-1 flex w-full items-center justify-between border-b-[1px] border-grey '>Centralized<span className="">{cent === true ? 'true' : 'false'}</span></p>
+                <p className='p-1 flex w-full items-center justify-between border-b-[1px] border-grey '>Centralized<span className="">{cent === true ? <FontAwesomeIcon className='text-green text-[22px]' icon={faCircleCheck} /> : <FontAwesomeIcon className='text-red text-[22px]' icon={faCircleXmark} />}</span></p>
                 <p className='p-1 flex w-full items-center justify-between border-b-[1px] border-grey '>Est. Year<span className="text-[18.5px] dark:text-white text-black">{year}</span></p>
                 <p className='p-1 flex w-full items-center justify-between border-b-[1px] border-grey '>Country<span className="text-[18.5px] dark:text-white text-black">{country}</span></p>
                 <p className='p-1 flex w-full items-center justify-between border-b-[1px] border-grey '>Volume 24hr<span className="text-[18.5px] dark:text-white text-black">&#8377;{`${Intl.NumberFormat("en-IN", decimalPlace).format(vol24)}`}</span></p>
