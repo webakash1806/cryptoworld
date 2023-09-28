@@ -35,8 +35,8 @@ const useSingleExchange = () => {
                 vol24: data.trade_volume_24h_btc,
                 vol24nor: data.trade_volume_24h_btc_normalized
             }
-            tickers.sort((a, b) => b.converted_volume.usd
-                - a.converted_volume.usd
+            tickers.sort((a, b) => b.converted_volume.btc
+                - a.converted_volume.btc
             )
 
             setExchangeData({ ...exchangeData, isLoading: false, singleExchange: singleData, tickers: tickers })
