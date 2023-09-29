@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import useCoinChart from '../../Hooks/useCoinChart'
 import useChartDays from '../../Hooks/useChartDays'
 import Loading from '../Loading/Loading'
-import SelectedDay from './SelectedDay'
+import SelectedDay from '../SelectedDay/SelectedDay'
 import { Chart, Interaction } from 'chart.js';
 import { CrosshairPlugin, Interpolate } from 'chartjs-plugin-crosshair';
 Chart.register(CrosshairPlugin);

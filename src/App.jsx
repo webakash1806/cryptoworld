@@ -1,14 +1,14 @@
 import React from 'react'
 import ListContextData from './Context/ListContextProvider'
-import ExchangeList from './Components/ExchangeList/ExchangeList'
+import ExchangeList from './Pages/ExchangeList/ExchangeList'
 import { Routes, Route } from 'react-router-dom'
-import Home from './Components/Homepage/Home'
-import About from './Components/About/About'
-import FAQpage from './Components/FAQPage/FAQpage'
-import ContactPage from './Components/ContactPage/ContactPage'
-import ProjectPage from './Components/ProjectPage/ProjectPage'
-import CoinData from './Components/SIngleCoin/CoinData'
-import ExchangeData from './Components/SingleExchange/ExchangeData'
+import Home from './Pages/Home'
+import About from './Pages/About'
+import FAQpage from './Pages/FAQpage'
+import ContactPage from './Pages/ContactPage'
+import ProjectPage from './Pages/ProjectPage'
+import CoinData from './Pages/CoinData'
+import ExchangeData from './Pages/ExchangeData'
 
 const App = () => {
   return (

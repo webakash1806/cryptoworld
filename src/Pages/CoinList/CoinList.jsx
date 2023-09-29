@@ -1,13 +1,13 @@
-import ListHeader from '../Header/ListHeader/ListHeader'
 import { useContext } from "react"
+import Header from '../../Components/Header/MainHeader/Header'
+import ListHeader from '../../Components/Header/ListHeader/ListHeader'
 import ListContext from "../../Context/ListContext"
 import CoinListBox from "./CoinListBox"
-import CoinPagination from "../Pagination/CoinPagination"
+import CoinPagination from "../../Components/Pagination/CoinPagination"
 import CoinListScroll from "./CoinListScroll"
-import TrendingCoin from "../Trending/TrendingCoin"
-import Header from '../Header/MainHeader/Header'
+import TrendingCoin from "../../Components/Trending/TrendingCoin"
 import bannerImage from '../../assets/trendingBanner.jpg'
-import Loading from '../Loading/Loading'
+import Loading from '../../Components/Loading/Loading'
 
 
 const CoinList = () => {

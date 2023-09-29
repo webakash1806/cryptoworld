@@ -1,11 +1,11 @@
-import ListHeader from '../Header/ListHeader/ListHeader'
-import Header from '../Header/MainHeader/Header'
+import Header from '../../Components/Header/MainHeader/Header'
+import ListHeader from '../../Components/Header/ListHeader/ListHeader'
 import { useContext, useEffect } from "react"
 import ListContext from "../../Context/ListContext"
 import ExchangeListBox from './ExchangeListBox'
 import ExchangeListScroll from "./ExchangeListScroll"
-import ExchangePagination from "../Pagination/ExchangePagination"
-import Loading from '../Loading/Loading'
+import ExchangePagination from "../../Components/Pagination/ExchangePagination"
+import Loading from '../../Components/Loading/Loading'
 import useSingleCoin from '../../Hooks/useSingleCoin'
 
 const ExchangeList = () => {

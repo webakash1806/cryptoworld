@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import useExchangeChart from '../../../Hooks/useExchangeChart'
-import Loading from '../../Loading/Loading';
-import SelectedDay from '../../CoinChart/SelectedDay';
-import useExchangeDays from '../../../Hooks/useExchangeDays'
+import useExchangeChart from '../../Hooks/useExchangeChart'
+import Loading from '../Loading/Loading';
+import SelectedDay from '../SelectedDay/SelectedDay';
+import useExchangeDays from '../../Hooks/useExchangeDays'
 import { Chart, Interaction } from 'chart.js';
 import { CrosshairPlugin, Interpolate } from 'chartjs-plugin-crosshair';
 Chart.register(CrosshairPlugin);

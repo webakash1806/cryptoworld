@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from '../Header/MainHeader/Header'
-import CoinList from '../CoinList/CoinList'
-import Footer from '../Footer/Footer'
+import Header from '../Components/Header/MainHeader/Header'
+import CoinList from './CoinList/CoinList'
+import Footer from '../Components/Footer/Footer'
 
 const Home = () => {
     return (

@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
-import Header from '../Header/MainHeader/Header'
-import ExchangeChart from './ExchangeChart/ExchangeChart'
-import useSingleExchange from '../../Hooks/useSingleExchange'
-import LeftSectionContainer from './SingleExchangeContainer/LeftSectionContainer'
-import useSingleCoin from '../../Hooks/useSingleCoin'
+import Header from '../Components/Header/MainHeader/Header'
+import ExchangeChart from '../Components/SingleExchange/ExchangeChart'
+import useSingleExchange from '../Hooks/useSingleExchange'
+import LeftSectionContainer from '../Components/SingleExchange/LeftSectionContainer'
+import useSingleCoin from '../Hooks/useSingleCoin'
 import { useParams } from 'react-router-dom'
-import Loading from '../Loading/Loading'
-import TickersList from './ExchangeTickersList.jsx/TickersList'
+import Loading from '../Components/Loading/Loading'
+import TickersList from '../Components/SingleExchange/TickersList'
 
 const ExchangeData = () => {
     const { id } = useParams()
