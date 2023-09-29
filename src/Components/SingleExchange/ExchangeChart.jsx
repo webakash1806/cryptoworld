@@ -116,8 +116,6 @@ const ExchangeChart = ({ id, name }) => {
         },
     }
 
-    console.log(data)
-
     return (
         <div className=' flex flex-col gap-4 items-center dark:bg-darkBg dark:text-white w-[100vw]  sm:w-[35rem] md:w-[35rem] xmd:w-[57vw] lg:w-[40rem] h-fit lg:h-[30rem]'>
             <p className='font-semibold text-[18.5px]'>{name} chart</p>

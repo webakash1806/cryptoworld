@@ -18,14 +18,10 @@ const ExchangeData = () => {
 
     const { cent, country, image, name, rank, score, vol24, vol24nor, year } = exchangeData.singleExchange
 
-    console.log(score)
-
     useEffect(() => {
         setExchangeData({ ...exchangeData, id: id })
         setSingleCoin({ ...singleCoin, id: 'bitcoin' })
     }, [setExchangeData, setSingleCoin])
-
-    console.log(exchangeData)
 
     return (
         <div className=' dark:bg-darkBg w-screen overflow-hidden dark:text-white items-center justify-center min-h-screen'>
