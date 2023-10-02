@@ -37,13 +37,30 @@ const ContactPage = () => {
                         </a>
                     </div>
                 </div>
-                <form action="" className='flex flex-col items-center justify-center pt-4 w-screen'>
-                    <h2 className='text-[1.5rem] font-bold'>Pitch us</h2>
+                <form action="" method='POST' className='flex flex-col items-center justify-center pt-4 w-screen'>
+                    <h2 className='text-[1.5rem] font-bold mb-2 '>Pitch us</h2>
                     <div>
                         <p>hello,</p>
                         <p>
-                            my name is <input type="text" className='bg-transparent border-b outline-none' /> and <br /> my e-mail is <input type="email" name="" id="" className='bg-transparent border-b outline-none' /> <br /> and i would like to discuss about <input type="text" className='bg-transparent border-b outline-none' />
+                            my name is
+                            <input type="text"
+                                name='username'
+                                placeholder='your name'
+                                autoComplete='off'
+                                required className='bg-transparent border-b outline-none' />
+                            and <br /> my e-mail is
+                            <input type="email" name='email'
+                                placeholder='your email'
+                                autoComplete='off'
+                                required className='bg-transparent border-b outline-none' />
+                            <br /> and i would like to discuss about
+                            <input type="text"
+                                name='message'
+                                placeholder='message...'
+                                autoComplete='off'
+                                required className='bg-transparent border-b outline-none' />
                         </p>
+                        <input type="submit" value="Send" className='bg-[#A22EFF] hover:bg-[#a12effc0] hover:rounded-md duration-300 p-[0.4rem_3.5rem] rounded-sm cursor-pointer mt-2' />
                     </div>
                 </form>
             </div>
