@@ -31,7 +31,7 @@ const ContactPage = () => {
                         <p>itsakash18</p>
                     </a>
                 </div>
-                <form action="https://formspree.io/f/myyqbdzv" method='POST' className='flex flex-col items-center justify-center pt-6 w-screen gap-4'>
+                <form action="https://formspree.io/f/myyqbdzv" method='POST' className='text-white flex flex-col items-center justify-center pt-6 w-screen gap-4'>
                     <h2 className='text-[1.5rem] font-bold mb-2 border-b'>Pitch us</h2>
                     <div>
                         <p className='text-[18px]'>hello,</p>
