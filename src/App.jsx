@@ -9,6 +9,7 @@ import ContactPage from './Pages/ContactPage'
 import ProjectPage from './Pages/ProjectPage'
 import CoinData from './Pages/CoinData'
 import ExchangeData from './Pages/ExchangeData'
+import Auth from './Pages/SignUp/Auth'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/cryptoworld/projects" element={<ProjectPage />} />
         <Route exact path="/cryptoworld/coin/:id" element={<CoinData />} />
         <Route path="/cryptoworld/exchange/:id" element={<ExchangeData />} />
+        <Route path="/cryptoworld/signUp_Login" element={<Auth />} />
       </Routes>
 
     </ListContextData>

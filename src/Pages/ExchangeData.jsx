@@ -7,6 +7,7 @@ import useSingleCoin from '../Hooks/useSingleCoin'
 import { useParams } from 'react-router-dom'
 import Loading from '../Components/Loading/Loading'
 import TickersList from '../Components/SingleExchange/TickersList'
+import Footer from '../Components/Footer/Footer'
 
 const ExchangeData = () => {
     const { id } = useParams()
@@ -39,7 +40,7 @@ const ExchangeData = () => {
                         </div>
                     </div>
                     <div className='flex items-center justify-center w-[100vw] pt-10'>
-                        <div className="flex flex-col min-w-[19.4rem] max-w-[33.5rem] sm:max-w-[38rem] xmd:max-w-full p-1 xsm:p-[20px] lg:overflow-visible overflow-x-scroll">
+                        <div className="flex flex-col min-w-[19.4rem] max-w-[33.5rem] sm:max-w-[38rem] xmd:max-w-full p-1 xsm:p-[20px] sm:overflow-visible overflow-x-scroll">
                             <div className="flex lg:sticky top-0 bg-white dark:bg-[#151a1f] lg:gap-3 font-bold text-[14px] sm:text-[17x] capitalize border-t-[1px] border-b-[1px] border-[#b5b5b580] dark:border-[#6f6f6fab] pt-4 pb-4 w-fit">
                                 <p className="min-w-[2rem]  md:min-w-[5rem] text-center ">#</p>
                                 <p className='min-w-[7rem]  md:min-w-[8.5rem] text-left pl-1'>Pair</p>
@@ -52,6 +53,7 @@ const ExchangeData = () => {
                         </div>
                     </div>
                 </>}
+            <Footer />
         </div>
     )
 }

@@ -4,6 +4,7 @@ import HeaderList from './HeaderList'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 import useHeaderList from '../../../Hooks/useHeaderList'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
 
@@ -27,7 +28,7 @@ const Header = () => {
                 <div className="flex flex-col md:flex-row gap-3 md:gap-0 ">
                     {useHeaderList.map((val) => <HeaderList key={val.list} url={val.url} list={val.list} />)}
                 </div>
-                <button className='w-[90vw] bg-[#A22EFF] rounded-md md:w-fit p-3 mt-6 md:m-0 md:mr-4 md:p-[6px_16px] md:rounded-[4px] md hover:bg-[#bd4aff] duration-300'>Login/Signup</button>
+                <Link to="/cryptoworld/signUp_Login" className='text-center w-[90vw] bg-[#A22EFF] rounded-md md:w-fit p-3 mt-6 md:m-0 md:mr-4 md:p-[6px_16px] md:rounded-[4px] md hover:bg-[#bd4aff] duration-300'>Login/Signup</Link>
             </nav>
             <DarkModeToggle />
         </header>

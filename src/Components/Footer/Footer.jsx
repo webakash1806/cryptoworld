@@ -4,7 +4,7 @@ import FooterNav from './FooterNav'
 
 const Footer = () => {
     return (
-        <div className='flex flex-col items-center justify-center text-white bg-[#0C161B] shadow-[-1px_-2px_7px_#000]'>
+        <div className='flex flex-col items-center justify-center text-white bg-[#0C161B] shadow-[-1px_-2px_7px_#000] mt-6 pt-6'>
             <div className=' p-[25px_0px] h-fit gap-5 flex flex-col items-start justify-around md:flex-row md:w-full'>
 
                 <div className='w-[19rem] md:w-[17rem] border-b md:border-none pb-4'>
