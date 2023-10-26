@@ -10,6 +10,8 @@ import ProjectPage from './Pages/ProjectPage'
 import CoinData from './Pages/CoinData'
 import ExchangeData from './Pages/ExchangeData'
 import Auth from './Pages/SignUp/Auth'
+import Login from './Pages/SignUp/Login'
+import SignUp from './Pages/SignUp/SignUp'
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
         <Route exact path="/cryptoworld/coin/:id" element={<CoinData />} />
         <Route path="/cryptoworld/exchange/:id" element={<ExchangeData />} />
         <Route path="/cryptoworld/signUp_Login" element={<Auth />} />
+        <Route path="/cryptoworld/login" element={<Login />} />
+        <Route path="/cryptoworld/signup" element={<SignUp />} />
       </Routes>
 
     </ListContextData>
