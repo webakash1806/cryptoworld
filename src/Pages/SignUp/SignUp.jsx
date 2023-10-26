@@ -1,11 +1,14 @@
 import AuthHeader from "./AuthHeader"
+import Header from "../../Components/Header/MainHeader/Header"
+import Footer from "../../Components/Footer/Footer"
 
 const SignUp = () => {
     return (
-        <>
+        <div className="w-[100vw] h-[100vh] flex flex-col justify-between">
+            <Header />
             <AuthHeader />
             <form action=""
-                className="m-[1rem] flex flex-col border text-center">
+                className=" flex flex-col border text-center">
                 <div>
                     <label htmlFor="">Name</label>
                     <input
@@ -28,7 +31,8 @@ const SignUp = () => {
                 </div>
                 <button>SignUP</button>
             </form>
-        </>
+            <Footer />
+        </div>
     )
 }
 

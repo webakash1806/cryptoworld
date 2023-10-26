@@ -28,7 +28,7 @@ const Header = () => {
                 <div className="flex flex-col md:flex-row gap-3 md:gap-0 ">
                     {useHeaderList.map((val) => <HeaderList key={val.list} url={val.url} list={val.list} />)}
                 </div>
-                <Link to="/cryptoworld/signUp_Login" className='text-center w-[90vw] bg-[#A22EFF] rounded-md md:w-fit p-3 mt-6 md:m-0 md:mr-4 md:p-[6px_16px] md:rounded-[4px] md hover:bg-[#bd4aff] duration-300'>Login/Signup</Link>
+                <Link to="/cryptoworld/login" className='text-center w-[90vw] bg-[#A22EFF] rounded-md md:w-fit p-3 mt-6 md:m-0 md:mr-4 md:p-[6px_16px] md:rounded-[4px] md hover:bg-[#bd4aff] duration-300'>Login/Signup</Link>
             </nav>
             <DarkModeToggle />
         </header>
