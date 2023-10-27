@@ -9,18 +9,18 @@ const Login = () => {
             <div className="flex flex-col items-center justify-center">
                 <AuthHeader />
                 <form action=""
-                    className=" flex w-[20rem] flex-col text-center text-black dark:text-white">
-                    <div className="flex flex-col items-start m-[0.5rem_1.5rem]">
+                    className=" flex flex-col text-center text-black dark:text-white border w-[19.5rem] xs:w-[22rem]">
+                    <div className="flex flex-col items-start m-[0.5rem] xs:m-[0.5rem_1.5rem]">
                         <label htmlFor="" className="text-[16.5px] font-[500]">Email</label>
                         <input
                             type="text"
                             className="border w-full rounded-[3px] outline-none p-1 text-[16px]" />
                     </div>
-                    <div className="flex flex-col items-start m-[0.5rem_1.5rem] font-[500]">
+                    <div className="flex flex-col items-start m-[0.5rem] xs:m-[0.5rem_1.5rem] font-[500]">
                         <label htmlFor="" className="text-[16.5px]">Password</label>
                         <input type="password" className="border w-full rounded-[3px] outline-none p-1" />
                     </div>
-                    <button className='text-center bg-[#A22EFF] rounded-md p-2 m-6 hover:bg-[#bd4aff] duration-300 text-white'>Login</button>
+                    <button className='text-center bg-[#A22EFF] rounded-md p-2 m-[1rem_0.5rem] xs:m-[1rem_1.5rem] hover:bg-[#bd4aff] duration-300 text-white'>Login</button>
                 </form>
             </div>
             <Footer />
